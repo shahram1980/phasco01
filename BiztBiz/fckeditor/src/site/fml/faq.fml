@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * FCKeditor - The text editor for Internet - http://www.fckeditor.net
+ * Copyright (C) 2004-2010 Frederico Caldeira Knabben
+ * 
+ * == BEGIN LICENSE ==
+ * 
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ * 
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ * 
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ * 
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ * 
+ * == END LICENSE ==
+ * @version: $Id: faq.fml 4785 2009-12-21 20:10:28Z mosipov $
+-->
+<faqs title="Frequently Asked Questions" toplink="false">
+
+  <part id="general">
+    <title>General</title>
+    <faq id="context-fullurl">
+      <question>
+        How do I supply a full URL if the <code>ContextPathBuilder</code> prepends the context path?
+      </question>
+      <answer>
+        The <code>ContextPathBuilder</code> does <strong>not</strong> support this
+        for a good reason. A context is a dynamic entity which is bound to an
+        arbitrary server. So you can't guarantee were your context is running 
+        in a distributed environment. If you still need the full URL, extend the
+        <code>ContextPathBuilder</code> and override the <code>getUserFilesPath</code>
+        method and return the full URL.  
+      </answer>
+    </faq>
+    <faq id="additional-context-params">
+      <question>
+        I want to pass additional parameters to the Connector. How can I achieve that?
+      </question>
+      <answer>
+        The solution is a bit tricky but easy to do. This has beeen discussed 
+        <a href="http://www.fckeditor.net/forums/viewtopic.php?f=6&amp;t=13887">here</a>.
+      </answer>
+    </faq>
+  </part>
+  
+  <part id="localization">
+    <title>Localization</title>
+   
+    <faq id="no-localized-messages">
+      <question>
+        I have localized some messages but they don't appear in the alert boxes.
+        Did I do something wrong? What can I do about it?
+      </question>
+      <answer>
+        Unfortunately the JavaScript code which responds with error messages
+        is incomplete. It does not cover all error numbers and has static error
+        messages. You can fix this by searching for all files which read the GetResponse
+        or UploadResponse and let the switch clause simply alert your localized
+        message.
+      </answer>
+    </faq>
+
+  </part>
+  
+</faqs>

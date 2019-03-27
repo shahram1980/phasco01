@@ -1,0 +1,89 @@
+~~ FCKeditor - The text editor for Internet - http://www.fckeditor.net
+~~ Copyright (C) 2004-2010 Frederico Caldeira Knabben
+~~
+~~ == BEGIN LICENSE ==
+~~
+~~ Licensed under the terms of any of the following licenses at your
+~~ choice:
+~~
+~~  - GNU General Public License Version 2 or later (the "GPL")
+~~    http://www.gnu.org/licenses/gpl.html
+~~
+~~  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+~~    http://www.gnu.org/licenses/lgpl.html
+~~
+~~  - Mozilla Public License Version 1.1 or later (the "MPL")
+~~    http://www.mozilla.org/MPL/MPL-1.1.html
+~~
+~~ == END LICENSE ==
+~~ @version $Id: useraction.apt 4785 2009-12-21 20:10:28Z mosipov $
+				-------------------------
+					UserAction Interface
+				-------------------------
+
+User Action
+
+  The integration pack offers you control over every command sent by a user
+  through the File Browser.
+
+  Read on to see how you can refit the system to your needs:
+
+* Rationale
+
+  Throughout the life cycle of the File Browser, several commands are sent with
+  payload to retrieve and create objects on the server. The Connector Servlet
+  receives the commands and responds as necessary to them. You are now able to
+  intercept the commands and tell the Connector Servlet if the current request
+  is actually enabled to perform this command on the server.\
+  The {{{http://docs.fckeditor.net/FCKeditor_2.x/Developers_Guide/Server_Side_Integration#The_Commands}Server Side Integration}}
+  defines five different types of commands for the File Browser which are
+  mapped to three internal commands:
+
+  * <<<GetFolders>>> and <<<GetFoldersAndFiles>>> to <<<GetResources>>>
+
+  * <<<CreateFolder>>> to <<<CreateFolder>>>
+
+  * <<<FileUpload>>> and <<<QuickUpload>>> to <<<FileUpload>>>
+
+  []
+
+  Based on these commands you can mandate globally and/or on per-user basis which
+  commands will be executed.
+
+* The interface
+
+  Consult the JavaDocs of the interface {{{java-core/apidocs/net/fckeditor/requestcycle/UserAction.html}<<<net.fckeditor.requestcycle.UserAction>>>}}
+  to see how it works.
+
+** Choosing an implementation
+
+  You have to choose an implementation, either an existing or a custom one.
+
+  Existing, ready-to-go implementations:
+
+   * {{{java-core/apidocs/net/fckeditor/requestcycle/impl/DisabledUserAction.html}<<<net.fckeditor.requestcycle.impl.DisabledUserAction>>>}} (default):
+     It always returns <<<false>>> for every method.
+
+   * {{{java-core/apidocs/net/fckeditor/requestcycle/impl/EnabledUserAction.html}<<<net.fckeditor.requestcycle.impl.EnabledUserAction>>>}}:
+     It always returns <<<true>>> for every method.
+
+   []
+
+  If no existing implementation suits your needs, create your own. Implement the
+  interface and resolve the locale the way you want.
+
+** Declaring an implementation
+
+   After your have chosen your desired implementation, you have to declare it.
+   Put the fully-qualified class name of the implementation in your
+   <<<fckeditor.properties>>>:
+
++------------------------------------------------------------------------------+
+  connector.userActionImpl=<desired implementation>
++------------------------------------------------------------------------------+
+
+* User response
+
+  The system will respond messages to the user as they may be necessary. You can
+  localized every one of them. See {{{localization.html}Localization}} for more
+  details.

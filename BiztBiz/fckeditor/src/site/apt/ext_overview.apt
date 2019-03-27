@@ -1,0 +1,46 @@
+~~ FCKeditor - The text editor for Internet - http://www.fckeditor.net
+~~ Copyright (C) 2004-2010 Frederico Caldeira Knabben
+~~
+~~ == BEGIN LICENSE ==
+~~
+~~ Licensed under the terms of any of the following licenses at your
+~~ choice:
+~~
+~~  - GNU General Public License Version 2 or later (the "GPL")
+~~    http://www.gnu.org/licenses/gpl.html
+~~
+~~  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+~~    http://www.gnu.org/licenses/lgpl.html
+~~
+~~  - Mozilla Public License Version 1.1 or later (the "MPL")
+~~    http://www.mozilla.org/MPL/MPL-1.1.html
+~~
+~~ == END LICENSE ==
+~~ @version $Id: ext_overview.apt 4785 2009-12-21 20:10:28Z mosipov $
+				-------------------------
+				   Extending Overview
+				-------------------------
+
+Overview
+
+    [Hint:] If you do not intend to extend the integration pack, skip this section.
+            An appropriate implementation will be used for every interface automatically.
+
+  The Java integration provides you several interfaces to extend and adapt to
+  your needs:
+
+  * <<UserAction>>: Gives you full control over any action the user can do in the
+    File Browser.
+
+  * <<UserPathBuilder>>: Enables you to construct a user-dependent file path.
+
+  * <<Connector>>: Gives you the ability to handle server-side connector requests
+    the way you want.
+
+  * <<Localization>>: Enables you to localize any message returned by tags and
+    the connector.
+
+  []
+
+  Please read the extending parts carefully if you intend to deploy the FCKeditor
+  in a particular system!

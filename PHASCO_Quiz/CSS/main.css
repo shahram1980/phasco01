@@ -1,0 +1,230 @@
+﻿/*
+ Design & CSS
+Ahtour:"Thomas cage"
+Email:"dgraphic@gmail.com"
+Date:2007/12/3
+*/
+body {
+	margin: 0px;
+	font-family: Tahoma;
+	font-size: 12px;
+}
+a {
+	text-decoration: none;
+	color: #CC3300;
+	padding: 2px;
+}
+a:hover {
+	color: white;
+	background-color: #990000;
+	padding: 2px;
+}
+img {
+	border: 0px;
+}
+.header {
+	height: 100px;
+}
+.logo {
+	float: right;
+	padding-right: 20px;
+}
+.space-header {
+	float: right;
+	width: 462px;
+	height: 100px;
+}
+.language {
+	float: right;
+	width: 239px;
+	padding-top: 62px;
+	background-repeat: no-repeat;
+}
+.all-conten {
+	width: 100%;
+}
+.menu {
+	background-image: url('../images/menu-bg.jpg');
+	height: 36px;
+	float: right;
+	clear: both;
+	width: 100%;
+	text-align: right;
+}
+.space-menu {
+	width: 141px;
+	float: right;
+	height: 38px;
+}
+.under-lang {
+	float: right;
+	background-image: url('../images/under-lang.jpg');
+	width: 239px;
+	height: 36px;
+}
+.content {
+	background-image: url('../images/right-pan-bg.jpg');
+	width: 100%;
+	float: right;
+	height:800px
+}
+.right-pan {
+	width: 739px;
+	height: 400px;
+	background-image: url('../images/right-pan-bg.jpg');
+	float: right;
+	text-align: right;
+}
+.left-pan {
+	background-image: url('../images/left-bg.jpg');
+	width: 239px;
+	height: 400px;
+	float: right;
+	direction: rtl;
+}
+.search-panel {
+	height: 67px;
+	width: 100%;
+	background-image: url('../images/search.gif');
+	background-position: center top;
+	background-repeat: no-repeat;
+	float: right;
+	margin-top: 20px;
+}
+.login-panel {
+	width: 100%;
+	background-position: center top;
+	background-repeat: no-repeat;
+	float: right;
+	margin-top: 20px;
+	padding-top: 20px;
+}
+.input-client {
+	background-color: transparent;
+	font-family: tahoma, Arial, Helvetica, sans-serif;
+	font-size: 8px;
+	border: 0px;
+	color: #808080;
+	padding-top: 9px;
+	padding-right: 50px;
+}
+.address-panel {
+	height: 95px;
+	width: 100%;
+	background-image: url('../images/address.jpg');
+	background-position: center top;
+	background-repeat: no-repeat;
+	float: right;
+	margin-top: 10px;
+}
+.new-product-flash {
+	height: 59px;
+	width: 100%;
+
+	background-position: center top;
+	background-repeat: no-repeat;
+	float: right;
+	margin-top: 20px;
+}
+.product {
+	float: right;
+	clear: both;
+	width: 250px;
+	margin-right: 20px;
+}
+.news {
+	float: right;
+	width: 230px;
+}
+.newa-content {
+	direction: rtl;
+	width: 190px;
+	text-align: justify;
+	font-size: 11px;
+	float:right
+}
+.flash-pro {
+	float: right;
+	margin: 10px;
+}
+.flash-photo {
+	padding: 10px 20px 0px 0px;
+	float: right;
+}
+.mini-text {
+	width: 200px;
+	height: 200px;
+	padding: 5px;
+	float: right;
+	font-family: Tahoma;
+	font-size: 12px;
+	color: #808080;
+	direction: rtl;
+	padding-right: 20px;
+	text-align: justify;
+}
+.product-content{
+		width: 200px;
+	height: 150px;
+	padding: 5px;
+	float: right;
+
+}
+.input-search {
+	background-color: transparent;
+	font-family: tahoma, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	border: 0px;
+	padding-top: 23px;
+	padding-right: 50px;
+	color: #808080;
+}
+.foter-menu {
+	float: right;
+	padding-top: 10px;
+	padding-right: 20px;
+	text-align: left;
+	width: 700px;
+}
+.footer {
+	height: 41px;
+	background-image: url('../images/footer.gif');
+	width: 100%;
+	float: right;
+}
+.product-header{
+	color:#990000
+}
+.rate{
+	
+}
+.thumbnail{
+position: relative;
+z-index: 0;
+}
+
+.thumbnail:hover{
+background-color: transparent;
+z-index: 50;
+}
+
+.thumbnail span{ /*CSS for enlarged image*/
+position: absolute;
+background-color: lightyellow;
+padding: 5px;
+left: -1000px;
+border: 1px dashed gray;
+visibility: hidden;
+color: black;
+text-decoration: none;
+}
+
+.thumbnail span img{ /*CSS for enlarged image*/
+border-width: 0;
+padding: 2px;
+}
+
+.thumbnail:hover span{ /*CSS for enlarged image on hover*/
+visibility: visible;
+top: 0;
+left: 60px; /*position where enlarged image should offset horizontally */

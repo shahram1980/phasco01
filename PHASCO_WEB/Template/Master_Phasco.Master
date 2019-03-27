@@ -1,0 +1,168 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master_Phasco.master.cs" Inherits="PHASCO_WEB.Template.Master_Phasco" %>
+
+<!DOCTYPE html>
+<%@ Register Src="../UI/Membership.ascx" TagName="Membership" TagPrefix="uc1" %>
+<%@ Register Src="../UI/left.ascx" TagName="left" TagPrefix="uc2" %>
+<%@ Register Src="UI/TopMenu.ascx" TagName="TopMenu" TagPrefix="uc6" %>
+<%@ Register Src="UI/SearchBox.ascx" TagName="SearchBox" TagPrefix="Karimifar" %>
+<%@ Register Src="../UI/footer.ascx" TagName="footer" TagPrefix="uc4" %>
+<%@ Register Src="../UI/header.ascx" TagName="header" TagPrefix="uc3" %>
+<%@ Register Src="UI/googlesearch.ascx" TagName="googlesearch" TagPrefix="uc5" %>
+<%@ Register Src="UI/googlesearch.ascx" TagName="googlesearch" TagPrefix="uc7" %>
+
+<html class="no-js" lang="fa" xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>PHASCO ®  فاسکو </title>
+    <meta name="google-site-verification" content="RSGA6sB6jNgQjHE_LFihkn8ol66GmF_gLuwkkmf3pPE" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- GOOGLE   -->
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-10093814-7");
+            pageTracker._setDomainName("none");
+            pageTracker._setAllowLinker(true);
+            pageTracker._trackPageview();
+        } catch (err) { }</script>
+    <!-- GOOGLE   -->
+
+    <link rel="stylesheet" href="~/theme/css/bootstrap.css" type="text/css" media="screen" />
+    <!-- REVOLUTION BANNER CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="~/theme/css/fullwidth.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/settings.css" media="screen" />
+
+    <link rel="stylesheet" type="text/css" href="~/theme/css/magnific-popup.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/owl.carousel.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/owl.theme.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/jquery.bxslider.css" media="screen" />
+
+    <link href="../Theme/css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/responsive.css" media="screen" />
+
+    <script type="text/javascript" src="../theme/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../theme/js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../Theme/persianumber.min.js"></script>
+    <!-- Start of StatCounter Code -->
+    <script type="text/javascript" lang="javascript">
+        var sc_project = 2148620;
+        var sc_invisible = 1;
+        var sc_partition = 19;
+        var sc_security = "8d4ac34d";
+        var sc_remove_link = 1;
+    </script>
+    <!-- End of StatCounter Code -->
+    <asp:ContentPlaceHolder runat="server" ID="head_Meta">
+    </asp:ContentPlaceHolder>
+    <!-- End of StatCounter Code -->
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div id="container">
+
+            <div id="wrapper">
+
+                <uc6:TopMenu ID="TopMenu1" runat="server" />
+
+
+                <!-- content
+            ================================================== -->
+                <div id="content">
+
+                    <div class="blog-box with-2col">
+                        <div class="container">
+
+                            <div class="row">
+                                <asp:ContentPlaceHolder runat="server" ID="pagebanner" />
+
+                            </div>
+                            <div class="row">
+
+
+
+                                <div class="col-md-9 blog-side">
+
+                                    <asp:Panel ID="PnlMessages" runat="server" Width="100%" CssClass="alert alert-warning fade in alert-dismissable rtl-text">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                                        <strong>
+                                            <asp:Image ID="imgMessageIcon" runat="server" Width="32" Height="32" />
+
+
+                                        </strong>
+
+                                        <asp:Label ID="lblMessagesTitle" runat="server" Font-Bold="True"></asp:Label>
+
+
+                                        <asp:Label ID="lblMessages" runat="server"></asp:Label>
+
+
+                                    </asp:Panel>
+                                    <Karimifar:SearchBox ID="TopMenu2" runat="server" />
+
+                                    <asp:ContentPlaceHolder ID="Plc_Mid" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </div>
+
+                                <div class="col-md-3 sidebar">
+                                    <div class="sidebar-widgets">
+
+                                        <%--<uc1:Membership ID="Membership1" runat="server" />--%>
+                                        <uc2:left ID="Left1" runat="server" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End content -->
+
+               <%-- <footer>
+
+                    <div class="footer-line">
+                        <div class="container text-center">
+                            <span><% Response.Write(DateTime.Now.Year); %>  © کلیه حقوق مادی و معنوی این سایت برای شرکت تحقیقاتی و تولیدی فارمد آوران سبز محفوظ است</span>
+                        </div>
+                    </div>
+                </footer>--%>
+            </div>
+
+        </div>
+    </form>
+	                <footer>
+
+                    <div class="footer-line">
+                        <div class="container text-center">
+                            <span><% Response.Write(DateTime.Now.Year); %>  © کلیه حقوق مادی و معنوی این سایت برای شرکت تحقیقاتی تولیدی فارمد آوران سبز محفوظ است</span>
+                        </div>
+                    </div>
+                </footer>
+    <%--    <div style="display: none">
+        <!-- Begin WebGozar.com Counter code -->
+<script type="text/javascript" language="javascript" src="http://www.webgozar.ir/c.aspx?Code=1212868&amp;t=counter" ></script>
+<noscript><a href="http://www.webgozar.com/counter/stats.aspx?code=1212868" target="_blank">&#1570;&#1605;&#1575;&#1585;</a></noscript>
+<!-- End WebGozar.com Counter code -->
+    </div>--%>
+
+    <script type="text/javascript" src="../theme/js/jquery.migrate.js"></script>
+    <script type="text/javascript" src="../theme/js/jquery.magnific-popup.min.js"></script>
+
+    <script type="text/javascript" src="../theme/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="../theme/js/raphael-min.js"></script>
+    <script type="text/javascript" src="../theme/js/DevSolutionSkill.min.js"></script>
+    <%--<script type="text/javascript" src="../theme/js/retina-1.1.0.min.js"></script>--%>
+    <script type="text/javascript" src="../theme/js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="../theme/js/plugins-scroll.js"></script>
+
+    <!-- jQuery KenBurn Slider  -->
+    <script type="text/javascript" src="../theme/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="../theme/js/script.js"></script>
+
+</body>
+</html>

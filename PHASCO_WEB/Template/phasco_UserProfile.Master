@@ -1,0 +1,309 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="phasco_UserProfile.master.cs"
+    Inherits="PHASCO_WEB.Template.phasco_UserProfile" %>
+
+<%@ Register Src="../UI/Membership.ascx" TagName="Membership" TagPrefix="uc1" %>
+<%@ Register Src="../UI/left.ascx" TagName="left" TagPrefix="uc2" %>
+<%@ Register Src="UI/TopMenu.ascx" TagName="TopMenu" TagPrefix="uc6" %>
+<%@ Register Src="UI/SearchBox.ascx" TagName="SearchBox" TagPrefix="Karimifar" %>
+
+<%@ Register Src="../UI/NewsFlash.ascx" TagName="NewsFlash" TagPrefix="uc3" %>
+<%@ Register Src="../UI/footer.ascx" TagName="footer" TagPrefix="uc4" %>
+<%@ Register Src="../UI/header.ascx" TagName="header" TagPrefix="uc5" %>
+<%@ Register Src="UI/googlesearch.ascx" TagName="googlesearch" TagPrefix="uc7" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>سایت علوم آزمایشگاهی فاسکو</title>
+
+    <meta name="keywords" content="مقالات,علوم,آزمایشگاهی,سرولوژی,ایمونولوژی,هماتولوژِی,میکروب,شناسی,انگل,تجزیه,ادرار,بیوتکنولوژی,هورمون,پاتولوژی,کنترل,کیفی,اطلس,وبلاگ,لیست,آزمایشگاه,تشخیص,طبی,پاتوبیولوژی,کاریابی,اخبار,کاربران,رقابت,علمی,کاربردی,جامعه,کشور,کیتهای,تشخیصی,الایزا,مقاله, فاسکو,تیروئیدی,هپاتیت,فریتین,باروری,تومورمارکر,سرولوژی,فرم,نمودار,ثبت,دمای,یخچال,انکوباتور,تغییرات,هدایت,الکتریکی,آب,مقطر,تولیدی,تحقیقاتی,فارمد,آوران,سبز,کیت" />
+    <meta name="description" content="سایت حرفه ای علوم آزمایشگاهی که در آن مقالات و اطلس ها و لیست کامل آزمایشگاه ها سراسر کشور و وبلاگ ها و پرسش و پاسخ علمی و برگزاری رقابت برترین های فاسکو با جوایز ارزشمند و اخبار آزمایشگاهی و کیت های تشخیصی طبی الایزا و سرولوژی ارائه می شود." />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- GOOGLE   -->
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-10093814-7");
+            pageTracker._setDomainName("none");
+            pageTracker._setAllowLinker(true);
+            pageTracker._trackPageview();
+        } catch (err) { }</script>
+    <!-- GOOGLE   -->
+    <link rel="stylesheet" href="~/theme/css/bootstrap.css" type="text/css" media="screen" />
+    <!-- REVOLUTION BANNER CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="~/theme/css/fullwidth.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/settings.css" media="screen" />
+
+    <link rel="stylesheet" type="text/css" href="~/theme/css/magnific-popup.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/owl.carousel.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/owl.theme.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/jquery.bxslider.css" media="screen" />
+    <link rel="stylesheet" href="~/theme/css/font-awesome-4.7.0/css/font-awesome.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/responsive.css" media="screen" />
+
+    <script type="text/javascript" src="../theme/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../theme/js/bootstrap.js"></script>
+    <script src="../Theme/persianumber.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- Acaardion Java script & CSS -->
+</head>
+<body>
+    <div id="container">
+
+
+
+        <!-- content
+            ================================================== -->
+        <div id="content">
+
+            <div class="blog-box with-2col">
+                <div class="container">
+                    <div class="row">
+                        <form id="form1" runat="server">
+                            <div id="wrapper">
+
+
+
+                                <uc6:TopMenu ID="TopMenu1" runat="server" />
+
+                                <div class="col-md-9 blog-side">
+                                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                                    </asp:ScriptManager>
+
+                                    <Karimifar:SearchBox ID="TopMenu2" runat="server" />
+
+                                    <asp:ContentPlaceHolder ID="Plc" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </div>
+
+                                <div class="col-md-3 sidebar">
+
+
+
+                                    <div class="shop-widget">
+                                        <h4>مشخصات کاربر</h4>
+
+                                        <asp:DataList ID="DataList_Rated" runat="server" RepeatColumns="5"
+                                            RepeatDirection="Horizontal">
+                                            <ItemTemplate>
+
+                                                <table border="1" width="29" cellpadding="0" style="border-collapse: collapse" bordercolor="#FFFFFF">
+                                                    <tr>
+                                                        <td align="center">
+                                                            <img src="../images/Rated/<%# Eval("Rated") %>.jpg" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center">
+
+                                                            <font color="#808080" size="1"><%# Eval("c") %><span lang="fa">
+      </span></font></td>
+                                                    </tr>
+                                                </table>
+
+
+                                            </ItemTemplate>
+                                        </asp:DataList>
+                                        <table class="table no-border">
+                                            <tr>
+                                                <td align="center" colspan="2" dir="rtl" style="height: 14px" valign="top">
+                                                    <asp:HyperLink CssClass="btn btn-primary" ID="HyperLink_WebLog" runat="server">
+                                                                                          <i class="fa fa-rss"></i> وبلاگ
+                                                    </asp:HyperLink>
+                                                    <asp:HyperLink CssClass="btn btn-primary margin-right-5" ID="HyperLink_PM" runat="server">
+                                                                                           <i class="fa fa-envelope "></i> ارسال پیام
+                                                    </asp:HyperLink>
+
+
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <ul class="widget-item info-list">
+                                            <li>
+                                                <p class="work-time">
+                                                    <span>کاربری</span> :
+                                                   <asp:Literal ID="Label_Uid" runat="server"></asp:Literal>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p class="work-time">
+                                                    <span>امتياز</span> :
+                                                    <asp:Literal ID="Label_Point" runat="server"></asp:Literal>
+                                                </p>
+
+                                            </li>
+
+                                            
+
+                                            <li>
+                                                <p class="work-time"> <span>نام و نام خانوادگی </span>: <asp:Literal ID="Label_Name" runat="server"></asp:Literal>
+                                                </p>
+                                               
+                                            </li>
+                                            <li>
+                                                <p class="work-time"> <span>جنسیت</span>  :<asp:Literal ID="Label_Sex" runat="server"></asp:Literal>
+                                                </p>
+                                              
+                                            </li>
+                                            <li>
+                                                <p class="work-time" > <span class="pull-right"> متولد :</span>  
+													 <p  style="direction:ltr;color: #444444;    font-size: 13px;    font-family: 'WYekan', sans-serif;font-weight: 700;" > 
+                                                             <asp:Literal ID="Label_Birth" runat="server" ></asp:Literal> 
+												 	</p>  
+                                                </p>
+                                          
+                                            </li>
+                                            <li>
+                                                <p class="work-time"><span>شهر  :    </span>                                                 <asp:Literal ID="Label_Citty" runat="server"></asp:Literal>
+
+                                                </p>
+                                               
+                                            </li>
+                                            <li>
+                                                   
+                                                <p  class="work-time"><span>رشته  :</span>  <asp:Literal ID="Label_Reshte" runat="server"></asp:Literal>
+                                                </p>
+                                              
+                                            </li>
+                                            <li>
+                                                <p  class="work-time"><span>تحصیلات :</span> <asp:Literal ID="Label_Maghata"  runat="server"></asp:Literal>
+                                                </p>
+                                               
+                                            </li>
+
+                                            <li>
+                                                <p  class="work-time"><span>محل کار :</span>  <asp:Literal ID="Label_OfficeName"  runat="server"></asp:Literal>
+                                                </p>
+                                               
+                                            </li>
+                                            <li>
+                                                <p  class="work-time"><span>
+                                                     شغل :
+                                                    </span> <asp:Literal ID="Label_Job" runat="server"></asp:Literal>
+                                                </p>
+                                             
+                                            </li>
+                                            <li>
+                                                <p  class="work-time"> <span> رتبه :</span> <asp:Image ID="Image_PhascoRate" runat="server" />
+                                                </p>
+                                              
+                                            </li>
+
+                                        </ul>
+
+
+                                        <table class="table table-striped margin-top-5 info-table no-border rtl-text">
+
+                                        </table>
+                                        <table border="0" style="border-collapse: collapse" width="100%">
+                                            <tr>
+                                                <td align="center" colspan="2" valign="top">
+                                                    <asp:Image ID="Image_User_Photo" runat="server" />
+
+                                                    <div style="position: relative; left: 0; top: 0;">
+                                                        <img runat="server" id="img_User" src="" style="position: relative; top: 0; left: 0;" />
+                                                        <img runat="server" id="KingIcon" src="/images/Faculty_Icon.png" style="position: absolute; top: -20; left: 120px; width: 40px;" />
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+
+                                    <div class="suggestions" id="sticky-sidebar">
+
+                                        <div class="shop-widget">
+                                            <h4 class="grey">لیست دوستان </h4>
+
+
+
+                                            <asp:Repeater ID="DataList_User" runat="server">
+                                                <ItemTemplate>
+                                                    <div class="follow-user no-add">
+                                                        <img class="profile-photo-sm pull-right" src='<%# Images(int.Parse(Eval("Image").ToString()), int.Parse(Eval("id").ToString()), int.Parse(Eval("sex").ToString()))%>' />
+                                                        <div>
+                                                            <h5><a href='\UserProfile.aspx?id=<%#DataBinder.Eval(Container.DataItem, "id")%>'>
+                                                                <%#DataBinder.Eval(Container.DataItem, "Uid")%>
+                                                            </a></h5>
+                                                            <%# addfriend(Eval("Id").ToString())%>
+                                                        </div>
+                                                    </div>
+
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+
+                                            <div class="follow-user no-add">
+                                                <div class="no-border">
+                                                    <h5><a id="alink_allfre" runat="server" href="">مشاهده همه دوستان</a></h5>
+
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End content -->
+
+        <%-- <footer>
+
+            <div class="footer-line">
+                <div class="container text-center">
+                    <span><% Response.Write(DateTime.Now.Year); %>  © کلیه حقوق مادی و معنوی این سایت برای شرکت تحقیقاتی و تولیدی فارمد آوران سبز محفوظ است</span>
+                </div>
+            </div>
+        </footer>--%>
+    </div>
+
+
+    <%--    <div style="display: none">
+        <!-- Begin WebGozar.com Counter code -->
+<script type="text/javascript" language="javascript" src="http://www.webgozar.ir/c.aspx?Code=1212868&amp;t=counter" ></script>
+<noscript><a href="http://www.webgozar.com/counter/stats.aspx?code=1212868" target="_blank">&#1570;&#1605;&#1575;&#1585;</a></noscript>
+<!-- End WebGozar.com Counter code -->
+    </div>--%>
+
+    <!-- Start of StatCounter Code -->
+
+
+    <script type="text/javascript" src="../theme/js/jquery.migrate.js"></script>
+    <script type="text/javascript" src="../theme/js/jquery.magnific-popup.min.js"></script>
+
+    <script type="text/javascript" src="../theme/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="../theme/js/raphael-min.js"></script>
+    <script type="text/javascript" src="../theme/js/DevSolutionSkill.min.js"></script>
+    <%--<script type="text/javascript" src="../theme/js/retina-1.1.0.min.js"></script>--%>
+    <script type="text/javascript" src="../theme/js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="../theme/js/plugins-scroll.js"></script>
+
+    <!-- jQuery KenBurn Slider  -->
+    <script type="text/javascript" src="../theme/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="../theme/js/script.js"></script>
+    <script type="text/javascript" lang="javascript">
+        var sc_project = 2148620;
+        var sc_invisible = 1;
+        var sc_partition = 19;
+        var sc_security = "8d4ac34d";
+        var sc_remove_link = 1;
+    </script>
+    <!-- End of StatCounter Code -->
+</body>
+</html>

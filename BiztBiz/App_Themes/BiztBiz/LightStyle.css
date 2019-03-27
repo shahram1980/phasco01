@@ -1,0 +1,111 @@
+﻿.PagerContainerTable
+{
+	background-color: #f9f9f9;
+	border: 1px solid #f9f9f9;
+}
+.PagerInfoCell
+{
+	padding-right: 6px;
+	padding-left: 6px;
+	padding-bottom: 3px;
+	font: bold 11px tahoma;
+	color: #5b6f88;
+	padding-top: 3px;
+	white-space: nowrap;
+	background-color: #f9f9f9;
+	font-weight: normal;
+}
+.PagerInfoCell:link
+{
+	color: #ffcc66;
+	text-decoration: none;
+}
+.PagerInfoCell:visited
+{
+	color: #ffcc66;
+	text-decoration: none;
+}
+.PagerCurrentPageCell
+{
+	color: #254e6e;
+	background-color: #ebf1fb;
+	cursor: default;
+	padding: 0 2px;
+}
+.PagerOtherPageCells
+{
+	background-color: #f9f9f9;
+}
+
+.PagerOtherPageCells a img
+{
+	border:0px;
+}
+
+.PagerContainerTable td
+{
+	padding: 1px 5px;
+}
+
+.PagerSSCCells
+{
+	background-color: #cccccc;
+}
+.PagerHyperlinkStyle
+{
+	font: 11px tahoma;
+}
+.PagerHyperlinkStyle:hover
+{
+	color: #5c788e;
+	text-decoration: none;
+	font: 11px tahoma;
+}
+.PagerHyperlinkStyle:link
+{
+	color: #5c788e;
+	text-decoration: none;
+	font: 11px tahoma;
+}
+.PagerHyperlinkStyle:visited
+{
+	color: #5c788e;
+	text-decoration: none;
+	font: 11px tahoma;
+}
+.PagerHyperlinkStyle:active
+{
+	color: #5c788e;
+	text-decoration: none;
+	font: 11px tahoma;
+}
+.GoToLabel
+{
+	font: 12px tahoma;
+	color: #333333;
+	cursor: pointer;
+	font-size: 12px;
+	vertical-align: middle;
+	display: inline;
+}
+.GoToSelect
+{
+	font-size: 11px;
+}
+.GoToSelectedOption
+{
+	font-size: 12px;
+	color: #f9f9f9;
+	background-color: #666666;
+}
+
+.GoToArrow
+{
+	vertical-align: middle;
+	cursor: pointer;
+}
+.imgPagerOtherPageCells
+{
+	border:0;
+	margin-top:1px;
+}

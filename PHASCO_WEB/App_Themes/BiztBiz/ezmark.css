@@ -1,0 +1,48 @@
+/**
+ * CSS File for ezMark jQuery Plugin
+ *
+ **/
+.ez-hide
+{
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.ez-checkbox
+{
+    background: transparent url('images/ele-che1.png') 0 -20px no-repeat;
+    display: inline-block;
+    cursor:pointer;
+    font:17px tahoma;
+}
+
+.ez-radio
+{
+    background: transparent url('images/ele-radio.png') no-repeat;
+    display: inline-block;
+    cursor:pointer;
+    font:16px tahoma;
+}
+.ez-checkbox, .ez-radio
+{
+    zoom: 1;
+    display: inline;
+    _height: 30px;
+}
+.ez-checked
+{
+    background-position: 0 0px;
+}
+.ez-selected
+{
+    background-position: 0 -21px;
+}
+
+.ez-checkbox-green
+{
+    background: transparent url('images/checkbox-green.png') 0 1px no-repeat;
+    display: inline-block;
+}
+.ez-checked-green
+{
+    background-position: 0 -18px;
+}

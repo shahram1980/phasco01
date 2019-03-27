@@ -1,0 +1,22 @@
+﻿body
+{
+	font-family:Tahoma;
+	font-size: 12px;
+	font-weight:bold;
+}
+a 	
+{
+	font-size: 10px;
+   	font-family:Tahoma;
+	color:#606060;
+}
+a:hover {
+	color: #000;
+	text-decoration: underline;
+	font-family:Tahoma;
+}
+a:link, a:visited {
+	color: #000;
+	text-decoration: none;
+	font-family:Tahoma;
+}

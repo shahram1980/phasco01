@@ -1,0 +1,733 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Area_Code" xml:space="preserve">
+    <value>Area Code</value>
+  </data>
+  <data name="Both" xml:space="preserve">
+    <value> Both</value>
+  </data>
+  <data name="Business_Location" xml:space="preserve">
+    <value>Business Location</value>
+  </data>
+  <data name="Buyer" xml:space="preserve">
+    <value> Buyer</value>
+  </data>
+  <data name="Check_Uid_Valid" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="Confirm_Password" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="Country_Code" xml:space="preserve">
+    <value>Country Code</value>
+  </data>
+  <data name="Create_My_Account" xml:space="preserve">
+    <value>Create My Account</value>
+  </data>
+  <data name="Family" xml:space="preserve">
+    <value>Family</value>
+  </data>
+  <data name="female" xml:space="preserve">
+    <value> Female</value>
+  </data>
+  <data name="ID_Business_Email" xml:space="preserve">
+    <value>ID (Business Email)</value>
+  </data>
+  <data name="Industry" xml:space="preserve">
+    <value>Industry</value>
+  </data>
+  <data name="male" xml:space="preserve">
+    <value> Male</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>ok</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Sex" xml:space="preserve">
+    <value>Sex</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value> Supplier</value>
+  </data>
+  <data name="Supplier_or_Buyer" xml:space="preserve">
+    <value>Supplier or Buyer</value>
+  </data>
+  <data name="Tel" xml:space="preserve">
+    <value>Tel</value>
+  </data>
+  <data name="Telephone_Number" xml:space="preserve">
+    <value>Telephone Number</value>
+  </data>
+  <data name="This_ID_not_available" xml:space="preserve">
+    <value>this id is available</value>
+  </data>
+  <data name="Verify_Your_Registration" xml:space="preserve">
+    <value>Verify Your Registration</value>
+  </data>
+  <data name="Mr" xml:space="preserve">
+    <value>Mr</value>
+  </data>
+  <data name="Mss" xml:space="preserve">
+    <value>Mss</value>
+  </data>
+  <data name="Sign_In" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="Sign_out" xml:space="preserve">
+    <value>Sign out</value>
+  </data>
+  <data name="F_Subject" xml:space="preserve">
+    <value>Subject_En</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Delivery_Time" xml:space="preserve">
+    <value>Delivery Time</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="Minimum_Order" xml:space="preserve">
+    <value>Minimum Order</value>
+  </data>
+  <data name="Model_Number" xml:space="preserve">
+    <value>Model Number</value>
+  </data>
+  <data name="Packaging" xml:space="preserve">
+    <value>Packaging</value>
+  </data>
+  <data name="Place_of_Origin" xml:space="preserve">
+    <value>Place of Origin</value>
+  </data>
+  <data name="Product_Brand" xml:space="preserve">
+    <value>Product Brand</value>
+  </data>
+  <data name="Product_Keywords" xml:space="preserve">
+    <value>Product Keywords</value>
+  </data>
+  <data name="Product_Name" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="Specialty_of_Product" xml:space="preserve">
+    <value>Specialty of Product</value>
+  </data>
+  <data name="Specifications" xml:space="preserve">
+    <value>Specifications</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Supply_Ability" xml:space="preserve">
+    <value>Supply Ability</value>
+  </data>
+  <data name="Terms_of_Payment" xml:space="preserve">
+    <value>Terms of Payment</value>
+  </data>
+  <data name="User_Defined_Attributes" xml:space="preserve">
+    <value>User-Defined Attributes</value>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="chage" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="fld_Categories" xml:space="preserve">
+    <value>Subject_en</value>
+  </data>
+  <data name="Checking" xml:space="preserve">
+    <value>Checking</value>
+  </data>
+  <data name="Passed" xml:space="preserve">
+    <value>Passed</value>
+  </data>
+  <data name="Rejected" xml:space="preserve">
+    <value>Rejected</value>
+  </data>
+  <data name="language" xml:space="preserve">
+    <value>language</value>
+  </data>
+  <data name="Advertisement" xml:space="preserve">
+    <value>Advertisement</value>
+  </data>
+  <data name="annual_sales" xml:space="preserve">
+    <value>annual sales</value>
+  </data>
+  <data name="Business_Type" xml:space="preserve">
+    <value>Business Type</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="CompanyCompany_Address_Name" xml:space="preserve">
+    <value>Company Address</value>
+  </data>
+  <data name="Company_Introduction" xml:space="preserve">
+    <value>Company Introduction</value>
+  </data>
+  <data name="Company_Name" xml:space="preserve">
+    <value>Company Name</value>
+  </data>
+  <data name="Main_Markets" xml:space="preserve">
+    <value>Main Markets</value>
+  </data>
+  <data name="registered_capital" xml:space="preserve">
+    <value>registered capital</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="State_Province" xml:space="preserve">
+    <value>State / Province</value>
+  </data>
+  <data name="Total_Staff" xml:space="preserve">
+    <value>No.of Total Staff</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="year_Established" xml:space="preserve">
+    <value>year Established</value>
+  </data>
+  <data name="Zip_Postal_Code" xml:space="preserve">
+    <value>Zip/Postal Code</value>
+  </data>
+  <data name="Africa" xml:space="preserve">
+    <value>Africa</value>
+  </data>
+  <data name="Agent" xml:space="preserve">
+    <value>Agent</value>
+  </data>
+  <data name="Buying_Office" xml:space="preserve">
+    <value>Buying Office</value>
+  </data>
+  <data name="Distributor_Wholesaler" xml:space="preserve">
+    <value>Distributor/Wholesaler</value>
+  </data>
+  <data name="Eastern_Asia" xml:space="preserve">
+    <value>Eastern _Asia</value>
+  </data>
+  <data name="Eastern_Europe" xml:space="preserve">
+    <value>Eastern Europe</value>
+  </data>
+  <data name="finance_travel_etc" xml:space="preserve">
+    <value>Business Service (finance/ travel/ etc)</value>
+  </data>
+  <data name="Middle_East" xml:space="preserve">
+    <value>Middle East</value>
+  </data>
+  <data name="North_America" xml:space="preserve">
+    <value>North America</value>
+  </data>
+  <data name="Oceania" xml:space="preserve">
+    <value>Oceania</value>
+  </data>
+  <data name="Southeast_Asia" xml:space="preserve">
+    <value>Southeast Asia</value>
+  </data>
+  <data name="South_America" xml:space="preserve">
+    <value>South America</value>
+  </data>
+  <data name="Western_Europe" xml:space="preserve">
+    <value>Western Europe</value>
+  </data>
+  <data name="Worldwide" xml:space="preserve">
+    <value>Worldwide</value>
+  </data>
+  <data name="Enter_your_Account_Information" xml:space="preserve">
+    <value>Enter your Account Information</value>
+  </data>
+  <data name="Select_your_Account_Type" xml:space="preserve">
+    <value>Select your Account Type</value>
+  </data>
+  <data name="Company_Logo" xml:space="preserve">
+    <value>Company Logo</value>
+  </data>
+  <data name="exports" xml:space="preserve">
+    <value>exports</value>
+  </data>
+  <data name="Government_ministry" xml:space="preserve">
+    <value>Government ministry /Bureau/Commission</value>
+  </data>
+  <data name="Manufacturer" xml:space="preserve">
+    <value>Manufacturer</value>
+  </data>
+  <data name="Trade_Company" xml:space="preserve">
+    <value>Trade Company</value>
+  </data>
+  <data name="certificate_s" xml:space="preserve">
+    <value>certificate(s)</value>
+  </data>
+  <data name="Company_information" xml:space="preserve">
+    <value>Company information</value>
+  </data>
+  <data name="exported_record" xml:space="preserve">
+    <value>exported record</value>
+  </data>
+  <data name="Factory_Profile" xml:space="preserve">
+    <value>Factory Profile</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Manage_Certificate_Info" xml:space="preserve">
+    <value>Manage Certificate Info</value>
+  </data>
+  <data name="Manage_Exported_Records" xml:space="preserve">
+    <value>Manage Exported Records</value>
+  </data>
+  <data name="My" xml:space="preserve">
+    <value>My</value>
+  </data>
+  <data name="Personal_Info" xml:space="preserve">
+    <value>Personal Info</value>
+  </data>
+  <data name="Posted" xml:space="preserve">
+    <value>Posted</value>
+  </data>
+  <data name="product_s" xml:space="preserve">
+    <value>Product(s)</value>
+  </data>
+  <data name="Unposted" xml:space="preserve">
+    <value>Unposted</value>
+  </data>
+  <data name="wel_come" xml:space="preserve">
+    <value>welcome</value>
+  </data>
+  <data name="You_have_submitted" xml:space="preserve">
+    <value>You have submitted</value>
+  </data>
+  <data name="Join_Now" xml:space="preserve">
+    <value>Free sign up</value>
+  </data>
+  <data name="Post_a_Product" xml:space="preserve">
+    <value>Post a Product</value>
+  </data>
+  <data name="Manage_Products" xml:space="preserve">
+    <value>Manage Products</value>
+  </data>
+  <data name="Company_Profile" xml:space="preserve">
+    <value>Company Profile</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Factory_Address" xml:space="preserve">
+    <value>Factory Address</value>
+  </data>
+  <data name="Machinery_Equipment_Introduction" xml:space="preserve">
+    <value>Machinery / Equipment Introduction</value>
+  </data>
+  <data name="Machinery_Equipment_photo" xml:space="preserve">
+    <value>Machinery / Equipment Photo</value>
+  </data>
+  <data name="Materials_Components_Introduction" xml:space="preserve">
+    <value>Materials / Components Introduction</value>
+  </data>
+  <data name="Materials_Components_Photo" xml:space="preserve">
+    <value>Materials / Components Photo</value>
+  </data>
+  <data name="Production_Process_Introduction" xml:space="preserve">
+    <value>Production Process Introduction</value>
+  </data>
+  <data name="Production_Process_photo" xml:space="preserve">
+    <value>Production ProcessPhoto</value>
+  </data>
+  <data name="production_staf_numbers" xml:space="preserve">
+    <value>production staf numbers</value>
+  </data>
+  <data name="RD_staff_numbers" xml:space="preserve">
+    <value>R&amp;D staff numbers</value>
+  </data>
+  <data name="The_Total_Area_of_Factory" xml:space="preserve">
+    <value>The Total Area of Factory</value>
+  </data>
+  <data name="Year_built" xml:space="preserve">
+    <value>Year built</value>
+  </data>
+  <data name="Minimum_ID" xml:space="preserve">
+    <value>Minimum ID Lenght 6 character</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="other_products" xml:space="preserve">
+    <value>Other products</value>
+  </data>
+  <data name="About_Us" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="Factory_Tour" xml:space="preserve">
+    <value>Factory Tour</value>
+  </data>
+  <data name="Why_Us" xml:space="preserve">
+    <value>Why Us</value>
+  </data>
+  <data name="capital" xml:space="preserve">
+    <value>Capital</value>
+  </data>
+  <data name="Main_Products_or_Services" xml:space="preserve">
+    <value>Main Products or Services</value>
+  </data>
+  <data name="Bookmark" xml:space="preserve">
+    <value>Bookmark</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Print_this_page" xml:space="preserve">
+    <value>Print this page</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="Send_this_page_to_my_friends" xml:space="preserve">
+    <value>Send this page to my friends</value>
+  </data>
+  <data name="admin_Translate_mss" xml:space="preserve">
+    <value>I need tranlaste this message</value>
+  </data>
+  <data name="inquire_Now" xml:space="preserve">
+    <value>inquire Now</value>
+  </data>
+  <data name="inquiry_notUseronline_Mss" xml:space="preserve">
+    <value>Your not login to Biztbiz system . please first login .</value>
+  </data>
+  <data name="inquiry_SendSuccess_Mss" xml:space="preserve">
+    <value>You</value>
+  </data>
+  <data name="inquiry_send_Mss" xml:space="preserve">
+    <value>Your inquiry has been successfully sent.</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="Topic" xml:space="preserve">
+    <value>Topic</value>
+  </data>
+  <data name="Country_Territory" xml:space="preserve">
+    <value>Country / Territory</value>
+  </data>
+  <data name="Date_send" xml:space="preserve">
+    <value>Date send</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="Operate" xml:space="preserve">
+    <value>Operate</value>
+  </data>
+  <data name="Reply" xml:space="preserve">
+    <value>Reply</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="Back_List" xml:space="preserve">
+    <value>Back List</value>
+  </data>
+  <data name="inquires" xml:space="preserve">
+    <value>Inquire's</value>
+  </data>
+  <data name="Insert_New" xml:space="preserve">
+    <value>Insert New</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="News_Ins_Success" xml:space="preserve">
+    <value>Insert News Success</value>
+  </data>
+  <data name="extend" xml:space="preserve">
+    <value>Extend</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="WelcomeMss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WelcomeMss.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="inq_sub_en" xml:space="preserve">
+    <value>~/images/inq_sub_en.jpg</value>
+  </data>
+  <data name="Submit_Img" xml:space="preserve">
+    <value>~/images/inq_sub_en.jpg</value>
+  </data>
+  <data name="Expired_Date" xml:space="preserve">
+    <value>Expired Date</value>
+  </data>
+  <data name="Issued_Bureau" xml:space="preserve">
+    <value>Issued Bureau</value>
+  </data>
+  <data name="Issued_Date" xml:space="preserve">
+    <value>Issued Date</value>
+  </data>
+  <data name="Manage_Certificate" xml:space="preserve">
+    <value>Manage Certificate</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Valid_Area" xml:space="preserve">
+    <value>Valid Area</value>
+  </data>
+  <data name="Help_BodyFeild" xml:space="preserve">
+    <value>Body_en</value>
+  </data>
+  <data name="Post_a_Certificate" xml:space="preserve">
+    <value>Post a Certificate</value>
+  </data>
+  <data name="dir" xml:space="preserve">
+    <value>ltr</value>
+  </data>
+  <data name="Fill_the_field" xml:space="preserve">
+    <value>Fil the field</value>
+  </data>
+  <data name="Incorect_Email" xml:space="preserve">
+    <value>Incorect Email</value>
+  </data>
+  <data name="Pass_not_equal" xml:space="preserve">
+    <value>Pass not equal</value>
+  </data>
+  <data name="select_L1" xml:space="preserve">
+    <value>select_L1_en</value>
+  </data>
+  <data name="jonin-reg" xml:space="preserve">
+    <value>images/jonin-reg.jpg</value>
+  </data>
+  <data name="Login_Id_img" xml:space="preserve">
+    <value>images/id-reg.jpg</value>
+  </data>
+  <data name="Login_Pass_img" xml:space="preserve">
+    <value>images/pass-reg.jpg</value>
+  </data>
+  <data name="sigin-buttom" xml:space="preserve">
+    <value>~/images/sigin-reg.jpg</value>
+  </data>
+  <data name="fld_Categories_title" xml:space="preserve">
+    <value>Subject_en</value>
+  </data>
+  <data name="Back_to_Page" xml:space="preserve">
+    <value>Back to Page</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="GO" xml:space="preserve">
+    <value>GO</value>
+  </data>
+  <data name="Go_To" xml:space="preserve">
+    <value>Go To</value>
+  </data>
+  <data name="Next_to_Page" xml:space="preserve">
+    <value>Next to Page</value>
+  </data>
+  <data name="of" xml:space="preserve">
+    <value>of</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="RightToLeft_bol" xml:space="preserve">
+    <value>false</value>
+  </data>
+  <data name="Showing_Results" xml:space="preserve">
+    <value>Showing Results</value>
+  </data>
+  <data name="Show_Result" xml:space="preserve">
+    <value>Show Result</value>
+  </data>
+  <data name="to_First_Page" xml:space="preserve">
+    <value>to First Page</value>
+  </data>
+  <data name="to_Last_Page" xml:space="preserve">
+    <value>to Last Page</value>
+  </data>
+  <data name="Forget_Password" xml:space="preserve">
+    <value>Forget Password</value>
+  </data>
+  <data name="align" xml:space="preserve">
+    <value>left</value>
+  </data>
+  <data name="F_Subject2" xml:space="preserve">
+    <value>Subject_en2</value>
+  </data>
+  <data name="Company_Profile_Det" xml:space="preserve">
+    <value>اطلاعات فروشنده کامل نمی باشد. برای ایجاد ارتباط باید فروشنده اطلاعات خود را تکمیل کند</value>
+  </data>
+  <data name="F_Subject3" xml:space="preserve">
+    <value>Subject_en3</value>
+  </data>
+  <data name="News_body" xml:space="preserve">
+    <value>News body</value>
+  </data>
+  <data name="logout_Mss_Products" xml:space="preserve">
+    <value>کاربر گرامی احتمالا به دلیل استفاده نکردن بیش از حد، پنل کاربری&amp;nbsp; شما بصورت 
+                     خودکار از سیستم خارج شده است. 
+        &lt;br /&gt;
+        لطفا برای ادامه مجددا لاگین نمائید.</value>
+  </data>
+  <data name="Record_Not_Found" xml:space="preserve">
+    <value>هیچ محصولی وجود ندارد</value>
+  </data>
+  <data name="forgot_Notvalid_User" xml:space="preserve">
+    <value>هیچ کاربری پیدا نشد</value>
+  </data>
+  <data name="forgot_Succ_sendmail" xml:space="preserve">
+    <value>نام رمز جدید به آدرس پست الکترونیک شما ارسال شد</value>
+  </data>
+  <data name="Information_not_entered" xml:space="preserve">
+    <value>Information not entered</value>
+  </data>
+  <data name="ProductPicture" xml:space="preserve">
+    <value>ProductPicture</value>
+  </data>
+  <data name="ProductPictureList" xml:space="preserve">
+    <value>ProductPictureList</value>
+  </data>
+</root>

@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D2DBD05E-7275-4807-B190-1349BF7316E4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccessLayer</RootNamespace>
+    <AssemblyName>DataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="0000t1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>0000t1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ADV\tblViewerReport.cs" />
+    <Compile Include="Artilce\Article_Main.cs" />
+    <Compile Include="Artilce\Tractate_List.cs" />
+    <Compile Include="Atlas\T_Atlas_Comment.cs" />
+    <Compile Include="BaseDAL_Dir.cs" />
+    <Compile Include="BIZ\TBL_AdminUsers.cs" />
+    <Compile Include="BIZ\TBL_Categories.cs" />
+    <Compile Include="BIZ\TBL_Certification.cs" />
+    <Compile Include="BIZ\TBL_Coding.cs" />
+    <Compile Include="BIZ\TBL_Company_Profile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BIZ\TBL_BIZ_User.cs" />
+    <Compile Include="BIZ\TBL_Factory_Profile.cs" />
+    <Compile Include="BIZ\TBL_Help.cs" />
+    <Compile Include="BIZ\TBL_inquire.cs" />
+    <Compile Include="BIZ\TBL_InviteEmails.cs" />
+    <Compile Include="BIZ\TBL_News.cs" />
+    <Compile Include="BIZ\Tbl_Products.cs" />
+    <Compile Include="BIZ\TBL_Request.cs" />
+    <Compile Include="BIZ\TBL_SearchHistory.cs" />
+    <Compile Include="BIZ\TBL_User_Biz.cs" />
+    <Compile Include="BIZ\TBL_User_News.cs" />
+    <Compile Include="ConnectionString.cs" />
+    <Compile Include="DAL_ADV.cs" />
+    <Compile Include="DAL_ART.cs" />
+    <Compile Include="DAL_BIZ.cs" />
+    <Compile Include="DAL_Quiz.cs" />
+    <Compile Include="DAL_Main.cs" />
+    <Compile Include="DIRECTORY\Tbl_state.cs" />
+    <Compile Include="Dir\Lab_Gallery.cs" />
+    <Compile Include="Dir\TBL_Co_Gallery.cs" />
+    <Compile Include="Dir\TBL_Co_Properties.cs" />
+    <Compile Include="Dir\TBL_Doctor_Gallery.cs" />
+    <Compile Include="Dir\TBL_Doctor_Properties.cs" />
+    <Compile Include="Dir\Tbl_state.cs" />
+    <Compile Include="Dir\T_Restaurant.cs" />
+    <Compile Include="DS_MainPhasco.cs">
+      <DependentUpon>DS_MainPhasco.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_MainPhasco.Designer.cs">
+      <DependentUpon>DS_MainPhasco.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Job\TBL_Job_Category.cs" />
+    <Compile Include="Job\TBL_Job_CityState.cs" />
+    <Compile Include="Job\TBL_Job_CompanyInfo.cs" />
+    <Compile Include="Job\TBL_Job_Educations.cs" />
+    <Compile Include="Job\TBL_Job_employment.cs" />
+    <Compile Include="Job\TBL_Job_Languages.cs" />
+    <Compile Include="Job\TBL_Job_NewsPaper_AD.cs" />
+    <Compile Include="Job\TBL_Job_NewsPaper_SubAD.cs" />
+    <Compile Include="Job\TBL_Job_Resume.cs" />
+    <Compile Include="Job\TBL_Job_Special_careers.cs" />
+    <Compile Include="Main\FAQ_Tbl.cs" />
+    <Compile Include="Main\SMS_TO_User.cs" />
+    <Compile Include="Main\TBL_Lab_QC.cs" />
+    <Compile Include="Main\Tbl_Message.cs" />
+    <Compile Include="Main\Tbl_Message_Outbox.cs" />
+    <Compile Include="Main\TBL_News.cs" />
+    <Compile Include="Main\TBL_Notification.cs" />
+    <Compile Include="Main\TBL_NotificationType.cs" />
+    <Compile Include="Main\TBL_Search_Users.cs" />
+    <Compile Include="Main\TBL_TAGs.cs" />
+    <Compile Include="Main\Tbl_TodayText.cs" />
+    <Compile Include="Main\TBL_User_Friends.cs" />
+    <Compile Include="Main\TBL_User_Rated_Archive.cs" />
+    <Compile Include="Main\T_Qu_Weekly.cs" />
+    <Compile Include="Main\T_Solution.cs" />
+    <Compile Include="Main\T_Solution_Answer.cs" />
+    <Compile Include="Main\User.cs" />
+    <Compile Include="Main\Users_Action_Log.cs" />
+    <Compile Include="Main\Users_Blog.cs" />
+    <Compile Include="Main\Users_Blog_Links.cs" />
+    <Compile Include="Main\Users_Wall.cs" />
+    <Compile Include="Main\User_Blog.cs" />
+    <Compile Include="Main\User_Gallery_Tbl.cs" />
+    <Compile Include="PasTime\TBL_PasTime_Group_intersting_theme.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PasTime\TBL_PasTime_Group_Photo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PasTime\TBL_PasTime_Interestig_Theme.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PasTime\TBL_PasTime_News.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PasTime\TBL_PasTime_PhotoGallery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PasTime\TBL_PasTime_Theme_Comments.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PasTime\TBL_PasTime_Theme_Rate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="QC\TBL_QC_BRANDS.cs" />
+    <Compile Include="QC\TBL_QC_Controls.cs" />
+    <Compile Include="QC\TBL_QC_LotNOExpire.cs" />
+    <Compile Include="QC\TBL_QC_Message.cs" />
+    <Compile Include="QC\TBL_QC_Products.cs" />
+    <Compile Include="QC\TBL_QC_Products_QuantitativeTst.cs" />
+    <Compile Include="Quiz\TBL_Phasco_OnlineTest_AnswerSwitchTable.cs" />
+    <Compile Include="Quiz\TBL_Phasco_OnlineTest_DegreeTable.cs" />
+    <Compile Include="Quiz\TBL_Phasco_OnlineTest_FieldsGroupTable.cs" />
+    <Compile Include="Quiz\TBL_Phasco_OnlineTest_FieldsTable.cs" />
+    <Compile Include="Quiz\TBL_Phasco_OnlineTest_LessonTable.cs" />
+    <Compile Include="Quiz\TBL_Phasco_OnlineTest_LessonTypeTable.cs" />
+    <Compile Include="Quiz\TBL_Phasco_OnlineTest_Lesson_DegreeTable.cs" />
+    <Compile Include="Quiz\TBL_Phasco_OnlineTest_Lesson_FieldTable.cs" />
+    <Compile Include="Quiz\TBL_Phasco_OnlineTest_Lesson_QuizTable.cs" />
+    <Compile Include="Quiz\TBL_Phasco_OnlineTest_QuestionAnswerTable.cs" />
+    <Compile Include="Quiz\TBL_Phasco_OnlineTest_QuestionUserAnswerTable.cs" />
+    <Compile Include="Quiz\TBL_Phasco_OnlineTest_QuizTable.cs" />
+    <Compile Include="Quiz\TBL_User_Daily.cs" />
+    <Compile Include="Quiz\TB_User_Priod_Question.cs" />
+    <Compile Include="SiteMap_SP.cs" />
+    <Compile Include="Users\TBL_User.cs" />
+    <Compile Include="Users\TBL_User_Profile.cs" />
+    <Compile Include="Video\tblVideo.cs" />
+    <Compile Include="Video\tblVideoCategorie.cs" />
+    <Compile Include="Video\tblVideo_Comment.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="0000t1.xsc">
+      <DependentUpon>0000t1.xsd</DependentUpon>
+    </None>
+    <None Include="0000t1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>0000t1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="0000t1.xss">
+      <DependentUpon>0000t1.xsd</DependentUpon>
+    </None>
+    <None Include="app.config" />
+    <None Include="DS_MainPhasco.xsc">
+      <DependentUpon>DS_MainPhasco.xsd</DependentUpon>
+    </None>
+    <None Include="DS_MainPhasco.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_MainPhasco.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_MainPhasco.xss">
+      <DependentUpon>DS_MainPhasco.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

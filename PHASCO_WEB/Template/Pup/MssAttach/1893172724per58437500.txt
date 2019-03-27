@@ -1,0 +1,25 @@
+FTP & Host Info
+
+FTP Username: avaertebatat.com
+FTP Server: ftp.avaertebatat.com
+FTP Server IP: 70.38.38.41 
+FTP Password : ava112233
+
+
+	
+User Account
+Control PaneL : cp.AVAERTEBATAT.COM
+Control Panel UserName: AVAERTEBATAT.COM 
+Control Panel Password: ava112233
+
+
+SQL DATABASE Info
+
+Data Source : sql3.avaertebatat.com
+User ID  : avaertebatatcom;
+Password : 1045
+
+DNS INFO
+
+ns1.perisanhost.com
+ns2.perisanhost.com

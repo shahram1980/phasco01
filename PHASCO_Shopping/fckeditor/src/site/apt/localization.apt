@@ -1,0 +1,137 @@
+~~ FCKeditor - The text editor for Internet - http://www.fckeditor.net
+~~ Copyright (C) 2004-2010 Frederico Caldeira Knabben
+~~
+~~ == BEGIN LICENSE ==
+~~
+~~ Licensed under the terms of any of the following licenses at your
+~~ choice:
+~~
+~~  - GNU General Public License Version 2 or later (the "GPL")
+~~    http://www.gnu.org/licenses/gpl.html
+~~
+~~  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+~~    http://www.gnu.org/licenses/lgpl.html
+~~
+~~  - Mozilla Public License Version 1.1 or later (the "MPL")
+~~    http://www.mozilla.org/MPL/MPL-1.1.html
+~~
+~~ == END LICENSE ==
+~~ @version $Id: localization.apt 4785 2009-12-21 20:10:28Z mosipov $
+				-------------------------------
+					LocaleResolver Interface
+				-------------------------------
+
+Localization
+
+  The integration pack offers you the capability to localize any string returned
+  to the user on a global basis and on a per-locale basis depending on the
+  deployed framework/system (Request, JSTL, Struts, Spring, and other).
+
+  Read on to see how you can refit the system to your needs:
+
+* Rationale
+
+  Interaction with the File Browser may cause messages responded to the user
+  about the state of the system from the view of the user. The messages are
+  hard-coded in English which is a big annoyance in an international deployment.
+  You can now change all of them to other defaults and localize to an arbitrary
+  locale of your choice.
+
+* The interface
+
+  Consult the JavaDocs of the interface {{{java-core/apidocs/net/fckeditor/localization/LocaleResolver.html}<<<net.fckeditor.localization.LocaleResolver>>>}}
+  to see how it works.
+
+** Choosing an implementation
+
+  You have to choose an implementation, either an existing or a custom one.
+
+  Existing, ready-to-go implementations:
+
+   * {{{java-core/apidocs/net/fckeditor/localization/impl/AcceptLanguageHeaderResolver.html}<<<net.fckeditor.localization.impl.AcceptLanguageHeaderResolver>>>}} (default):
+     It retrieves the first locale in the HTTP <<<Accept-Language>>> header if
+     available.
+
+   * {{{java-core/apidocs/net/fckeditor/localization/impl/JstlResolver.html}<<<net.fckeditor.localization.impl.JstlResolver>>>}}:
+     The user locale will be retrieved from the session set by JSTL's <<<fmt>>>
+     tag or similar.
+
+   []
+
+  If no existing implementation suits your needs, create your own. Implement the
+  interface and resolve the locale the way you want.
+
+** Declaring an implementation
+
+   After your have chosen your desired implementation, you have to declare it.
+   Put the fully-qualified class name of the implementation in your
+   <<<fckeditor.properties>>>:
+
++------------------------------------------------------------------------------+
+  localization.localeResolverImpl=<desired implementation>
++------------------------------------------------------------------------------+
+
+* The messages
+
+    [Hint:] The resolver system is fail-safe concerning localized message retrieval.
+            This means that if a localized message cannot be found, the default
+            message will be used by default.
+
+  Each returned message can be localized on a global basis and on a per-locale basis.
+  Put your globally localized strings in a <<<fckeditor_messages.properties>>>
+  and your per-locale localized strings in a <<<fckeditor_messages_\<locale\>.properties>>>
+  file.
+
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+|| Property							|| Default									|| Valid Values	|| Description                                     ||
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| editor.compatibleBrowser.yes		| Your browser is fully compatible			| any string	| Indicates that the browser is fully compatible.	|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| editor.compatibleBrowser.no		| Your browser is not compatible			| any string	| Indicates that the browser is not compatible.		|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| connector.						| Invalid command specified					| any string	| The provided command was invalid/does not exist.	|
+| invalid_command_specified			|											|				|													|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| connector.						| Invalid resource type specified			| any string	| The provided type was invalid/does not exist.		|
+| invalid_resource_type_specified	|											|				|													|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| connector.						| Invalid current folder specified			| any string	| The provided current folder was invalid/does		|
+| invalid_current_folder_specified	|											|				| not exist.										|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| connector.getResources.enabled	| You are authorized to browse/list			| any string	| Notifies the user that (s)he can browse/list files|
+|									| files and/or folders!						|				| and/or folders.									|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| connector.getResources.disabled	| You are not authorized to browse/list		| any string	| Notifies the user that (s)he cannot browse/list	|
+|									| files and/or folders!						|				| files and/or folders.								|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| connector.getResources.read_error	| The selected resources could not			| any string	| Notifies the user that during resource retrieval	|
+|									| be read successfully, please try again!	|				| some error/exception has occurred.				|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| connector.createFolder.enabled	| You are authorized to create folders!		| any string	| Notifies the user that (s)he can create folders.	|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| connector.createFolder.disabled	| You are not authorized to create folders!	| any string	| Notifies the user that (s)he cannot create folders.|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| connector.createFolder.			| Invalid new folder name specified			| any string	| The provided new folder name was invalid.			|
+| invalid_new_folder_name_specified	|											|				|													|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| connector.createFolder.			| The specified folder already exists		| any string	| The specified folder already exists on the		|
+| folder_already_exists_error		|											|				| server.											|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| connector.						| The specified folder could not			| any string	| Notifies the user that during folder creation		|
+| createFolder.write_error			| be created successfully, please try again!|				| some error/exception has occurred.				|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| connector.fileUpload.enabled		| You are authorized to upload files!		| any string	| Notifies the user that (s)he can upload files.	|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| connector.fileUpload.disabled		| You are not authorized to upload files!	| any string	| Notifies the user that (s)he cannot upload files.	|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| connector.fileUpload.				| Your file was uploaded successfully		| any string	| Warns the user that the file upload was successful|
+| file_renamed_warning				| but has been renamed to '\{0\}'.			| \{0\} - new filename| but it has been renamed because another file|
+|									|											|				| exists with the same name.						|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| connector.fileUpload.				| The uploaded has a wrong file type		| any string	| Warns the user that the uploaded file type		|
+| invalid_file_type_specified		| (extension).								|				| (extension) does not pass the resource type's		|
+|									|											|				| allowed/denied list.								|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+
+| connector.fileUpload.write_error	| The specified file could not be			| any string	| Notifiles the user that during file upload		|
+|									| uploaded successfully, please try again!	|				| some error/exception has occurred.				|
+*-----------------------------------+-------------------------------------------+---------------+---------------------------------------------------+

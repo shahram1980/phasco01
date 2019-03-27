@@ -1,0 +1,73 @@
+~~ FCKeditor - The text editor for Internet - http://www.fckeditor.net
+~~ Copyright (C) 2004-2010 Frederico Caldeira Knabben
+~~
+~~ == BEGIN LICENSE ==
+~~
+~~ Licensed under the terms of any of the following licenses at your
+~~ choice:
+~~
+~~  - GNU General Public License Version 2 or later (the "GPL")
+~~    http://www.gnu.org/licenses/gpl.html
+~~
+~~  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+~~    http://www.gnu.org/licenses/lgpl.html
+~~
+~~  - Mozilla Public License Version 1.1 or later (the "MPL")
+~~    http://www.mozilla.org/MPL/MPL-1.1.html
+~~
+~~ == END LICENSE ==
+~~ @version $Id: upgrade_notes.apt.vm 4785 2009-12-21 20:10:28Z mosipov $
+                        ------------------------------
+                                Upgrades Notes
+                        ------------------------------
+
+Upgrade Notes
+
+ These upgrade notes shall guide you through the changes made from one version
+ to another.\
+ Although we maintain {{{changes-report.html}Release Notes}}, it is still viable
+ to know which changes may/will break or affect your current deployment. Thus these
+ notes should be taken as advice to which changes you should really pay attention to.\
+ Please refer to the {{{java-core/clirr-report.html}Clirr report}} for a more
+ detailed view of binary and API changes between the current and previous release.
+
+* Upgrading from 2.5.x
+
+*-------------------------------+----------------------------------------------+
+|| Ticket						|| Remark									  ||
+*-------------------------------+----------------------------------------------+
+| {{{${ticketUrl}/3889}3889}}	| The minimum requirement for Maven	has been raised to version 2.0.10 if you plan to compile the integration pack yourself. | 
+*-------------------------------+----------------------------------------------+
+| {{{${ticketUrl}/3449}3449}}	| All deprecated code has been removed. 		|
+*-------------------------------+----------------------------------------------+
+
+* Upgrading from 2.4.x
+
+*-------------------------------+----------------------------------------------+
+|| Ticket						|| Remark									  ||
+*-------------------------------+----------------------------------------------+
+| -								| The FCKeditor class enforces now less checks and the FCKConfig can now be set one-by-one only. |
+*-------------------------------+----------------------------------------------+
+| {{{${ticketUrl}/2743}2743}}	| Add <<<{{{java-core/apidocs/net/fckeditor/requestcycle/UserPathBuilder.html#getUserFilesAbsolutePath(javax.servlet.http.HttpServletRequest)}getUserFilesAbsolutePath}}>>> to <<<{{{java-core/apidocs/net/fckeditor/requestcycle/UserPathBuilder.html}UserPathBuilder}}>>> interface, implement this method in your builder too. |
+*-------------------------------+----------------------------------------------+
+| -								| The features/commands <<<FolderCreation>>> and <<<FileBrowsing>>> in the {{{java-core/tagreference.html#FCK:check}CheckTag}} have been deprecated. |
+*-------------------------------+----------------------------------------------+
+| {{{${ticketUrl}/2618}2618}}	| So far we have used ImageInfo which was incorporated into our core jar. We have refactored it and removed from our jar. It is now on |
+|								| Maven Central Repo. Maven users do not have to bother but those who don't use Maven please make sure that the ImageInfo jar is on |
+|								| your classpath. The jar is bundled with the binary distribution. |
+*-------------------------------+----------------------------------------------+
+| {{{${ticketUrl}/2608}2608}}	| The FCKeditor value will now be passed as-is, whitespace won't be truncated anymore. |
+*-------------------------------+----------------------------------------------+
+| {{{${ticketUrl}/2583}2583}}	| The ConnectorServlet will fail in some environments when the deployed war file won't be expanded. If this happens, the |
+|								| ConnectorServlet will emit an appropriate log message. Consider to switch to another {{{connector.html}Connector}}. |
+*-------------------------------+----------------------------------------------+
+| {{{${ticketUrl}/2582}2582}}	| Path handling has been aligned to other connector implementations. The FullUrl property is gone ({{{faq.html#context-fullurl}FAQ}}). the UserFilesPath has slightly |
+|								| changed semantics and an UserFilesAbsolutePath property has been introduced. Please check the {{{properties.html}Configuration}} for more details. |
+*-------------------------------+----------------------------------------------+
+| {{{${ticketUrl}/2580}2580}}	| The implementation <<<{{{java-core/apidocs/net/fckeditor/requestcycle/impl/UserActionImpl.html}UserActionImpl}}>>> has been deprecated in favor of <<<{{{java-core/apidocs/net/fckeditor/requestcycle/impl/EnabledUserAction.html}EnabledUserAction}}>>>. Both classes are functionally equal. |
+*-------------------------------+----------------------------------------------+
+| {{{${ticketUrl}/2383}2383}}	| We provide several implementations for every interface. If you don't pick any particaluar implementation, don't worry, we will pick a |
+|								| suitable one for you.						   |
+*-------------------------------+----------------------------------------------+
+| {{{${ticketUrl}/2382}2382}}	| The <<<{{{java-core/apidocs/net/fckeditor/requestcycle/UserAction.html}UserAction}}>>> interface has now one more method <<<{{{java-core/apidocs/net/fckeditor/requestcycle/UserAction.html#isCreateFolderEnabled(javax.servlet.http.HttpServletRequest)}isCreateFolderEnabled}}>>>. If you have deployed your own implementation, please adapt it. |
+*-------------------------------+----------------------------------------------+

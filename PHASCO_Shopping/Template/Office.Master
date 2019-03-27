@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Office.master.cs" Inherits="PHASCO_Shopping.Template.Office1" %>
+
+<%@ Register Src="../UC/Top_Link.ascx" TagName="Top_Link" TagPrefix="uc1" %>
+<%@ Register src="../UC/footer.ascx" tagname="footer" tagprefix="uc2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+
+    <link id="css" runat="server" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 25px;
+        }
+        .style2
+        {
+            width: 25px;
+            height: 27px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="center-align">
+        <uc1:Top_Link ID="Top_Link1" runat="server" />
+        <table style="width: 900px" align="center">
+            <tr>
+                <td >
+                <center>
+                    <img alt="" src="../images/header-profile.jpg"  /></center>
+              
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table style="width: 100%" class="direction">
+             
+                        <tr>
+                            <td style="padding: 30px" valign="top">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td style="width: 220px; border: 1px #CCCCCC solid" valign="top">
+                                            <div class="left-cat-prof">
+                                                <div class="menu-prof">
+                                                    <img  alt=""  src="../images/Office_Icons/p.png" /> 
+                                                    <asp:HyperLink ID="HyperLink7" runat="server" Text="<%$ Resources:Resource, Post_a_Product %>"
+                                                        NavigateUrl="~/MyPHASCO_Shopping/PostNewProduct.aspx"></asp:HyperLink>
+                                                   </div>
+                                                <div class="menu-prof">
+                                                    <img alt="" class="style2" src="../images/Office_Icons/m.png" /> <asp:HyperLink ID="HyperLink1" runat="server" Text="<%$ Resources:Resource, Manage_Products %>"
+                                                        NavigateUrl="~/MyPHASCO_Shopping/listproduct.aspx"></asp:HyperLink>
+                                                </div>
+                                                <div class="menu-prof">
+                                                    <img alt="" class="style2" src="../images/Office_Icons/c.png" /> <asp:HyperLink ID="HyperLink2" runat="server" Text="<%$ Resources:Resource, Company_Profile %>"
+                                                        NavigateUrl="~/MyPHASCO_Shopping/company_profile.aspx"></asp:HyperLink>
+                                                </div>
+                                                <div class="menu-prof">
+                                                    <img alt="" class="style2" src="../images/Office_Icons/f.png" /> <asp:HyperLink ID="HyperLink8" runat="server" Text="<%$ Resources:Resource, Factory_Profile %>"
+                                                        NavigateUrl="~/MyPHASCO_Shopping/Factory_Profile.aspx"></asp:HyperLink></div>
+                                                <div class="menu-prof">
+                                                <img alt="" class="style2" src="../images/Office_Icons/i.png" />
+<asp:HyperLink ID="HyperLink4" runat="server" 
+NavigateUrl="~/MyPHASCO_Shopping/inquiry_List.aspx">
+<asp:Literal Text="<%$ Resources:Resource, inquires %>" runat="server" />
+
+<asp:Label runat="server" ID="Label_inquiry" ForeColor="Red" />
+</asp:HyperLink>
+                                                
+                                                </div>
+                                                <div class="menu-prof">
+                                                
+                                                   <img alt="" class="style2" src="../images/Office_Icons/n.png" /> <asp:HyperLink ID="HyperLink5" runat="server" Text="<%$ Resources:Resource, News %>"
+                                                        NavigateUrl="~/MyPHASCO_Shopping/News.aspx"></asp:HyperLink>
+                                                </div>
+                                                <div class="menu-prof">
+                                                
+                                                
+                                                   <img alt="" class="style2" src="../images/Office_Icons/b.png" /> <asp:HyperLink ID="HyperLink6" runat="server" Text="<%$ Resources:Resource, Post_a_Certificate %>"
+                                                        NavigateUrl="~/MyPHASCO_Shopping/Certification.aspx"></asp:HyperLink>
+                                                </div>
+                                               
+<div class="menu-prof">
+                                                
+                                                
+<img alt="" class="style2" src="../images/Office_Icons/c.png" /> <asp:HyperLink ID="HyperLink3" runat="server" Text="<%$ Resources:Resource, Contact_Info %>"
+NavigateUrl="~/MyPHASCO_Shopping/Contact.aspx"></asp:HyperLink>
+</div>
+                                                </div>
+                                        </td>
+                                        <td style="width: 1px">
+                                            &nbsp;
+                                        </td>
+                                        <td style="width: 560px; border: 1px #CCCCCC solid" valign="top">
+                                            <div class="right-cat-prof">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td class="center-align">
+                                                            <img alt="" src="../images/images-1.jpg" />
+                                                        </td>
+                                                    </tr>
+                                         
+                                                    <tr>
+                                                        <td>
+                                                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                                            </asp:ContentPlaceHolder>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="center-align">
+                                <img alt="" src="images/b-frame-reg.jpg" width="866" height="10" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+ 
+        <uc2:footer ID="footer1" runat="server" />
+        
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,233 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Phasco03.master.cs" Inherits="phasco_webproject.Template.Phasco03" %>
+
+<%@ Register Src="UI/TopMenu.ascx" TagName="TopMenu" TagPrefix="uc5" %>
+<%@ Register Src="../UI/Membership.ascx" TagName="Membership" TagPrefix="uc3" %>
+<%@ Register Src="../UI/Vote.ascx" TagName="Vote" TagPrefix="uc2" %>
+<%@ Register Src="../UI/Shopcart.ascx" TagName="Shopcart" TagPrefix="uc1" %>
+<%@ Register Src="../UI/ArticleList.ascx" TagName="ArticleList" TagPrefix="uc4" %>
+<%@ Register src="../UI/footer.ascx" tagname="footer" tagprefix="uc6" %>
+<%@ Register src="UI/googlesearch.ascx" tagname="googlesearch" tagprefix="uc7" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>سایت علوم آزمایشگاهی فاسکو</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/main-final.css" />
+
+<!-- GOOGLE   -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+    var pageTracker = _gat._getTracker("UA-10093814-7");
+pageTracker._setDomainName("none");
+pageTracker._setAllowLinker(true);
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- GOOGLE   -->
+
+
+    <script type="text/javascript" language="JavaScript" src="Javaloading/progress.js">
+    
+    <style type="text/css">
+        a
+        {
+            font-size: 10px;
+            color: maroon;
+        }
+        a:hover
+        {
+            color: #a5a5a5;
+            text-decoration: underline;
+        }
+        a:link, a:visited
+        {
+            color: #a5a5a5;
+            text-decoration: none;
+        }
+    </style> 
+    <meta name="keywords" content="سایت تخصصی علوم آزمایشگاهی ایران، ارائه دهنده راهنما و صفحات اختصاصی آزمایشگاه ها و شرکت ها، مقالات جدید داخلی و خارجی، اطلس ها، کاریابی، پرسش و پاسخ، وبلاگ، رقابت علمی، اخبار، کیت های تشخیصی الایزا، سرولوژی،توربیدو متری ،ایمونوفلورسانس ">
+<meta name="description" content="سایت تخصصی علوم آزمایشگاهی ایران، ارائه دهنده راهنما و صفحات اختصاصی آزمایشگاه ها و شرکت ها، مقالات جدید داخلی و خارجی، اطلس ها، کاریابی، پرسش و پاسخ، وبلاگ، رقابت علمی، اخبار، کیت های تشخیصی الایزا، سرولوژی،توربیدو متری ،ایمونوفلورسانس ">
+
+ <link rel="stylesheet" type="text/css" href="css/ajaxtabs.css" />
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" style="margin: 0px;
+    background-image: url('images/bg.jpg');">
+    <!-- --------------------------- New Theme Styles ------------------------------- -->
+  
+
+    <script type="text/javascript" src="js/ajaxtabs.js"></script>
+
+    <script type="text/javascript">
+var billboardeffects=["GradientWipe(GradientSize=1.0 Duration=0.7)", "Inset", "Iris", "Pixelate(MaxSquare=5 enabled=false)", "RadialWipe", "RandomBars", "Slide(slideStyle='push')", "Spiral", "Stretch", "Strips", "Wheel", "ZigZag"]
+
+var tickspeed=6000 
+var effectduration=2000 
+var hidecontent_from_legacy=1
+
+var filterid=Math.floor(Math.random()*billboardeffects.length)
+
+document.write('<style type="text/css">\n')
+if (document.getElementById)
+document.write('.billcontent{display:none;\n'+'filter:progid:DXImageTransform.Microsoft.'+billboardeffects[filterid]+'}\n')
+else if (hidecontent_from_legacy)
+document.write('#contentwrapper{display:none;}')
+document.write('</style>\n')
+
+var selectedDiv=0
+var totalDivs=0
+
+function contractboard(){
+var inc=0
+while (document.getElementById("billboard"+inc)){
+document.getElementById("billboard"+inc).style.display="none"
+inc++
+}
+}
+
+function expandboard(){
+var selectedDivObj=document.getElementById("billboard"+selectedDiv)
+contractboard()
+if (selectedDivObj.filters){
+if (billboardeffects.length>1){
+filterid=Math.floor(Math.random()*billboardeffects.length)
+selectedDivObj.style.filter="progid:DXImageTransform.Microsoft."+billboardeffects[filterid]
+}
+selectedDivObj.filters[0].duration=effectduration/1000
+selectedDivObj.filters[0].Apply()
+}
+selectedDivObj.style.display="block"
+if (selectedDivObj.filters)
+selectedDivObj.filters[0].Play()
+selectedDiv=(selectedDiv<totalDivs-1)? selectedDiv+1 : 0
+setTimeout("expandboard()",tickspeed)
+}
+
+function startbill(){
+while (document.getElementById("billboard"+totalDivs)!=null)
+totalDivs++
+if (document.getElementById("billboard0").filters)
+tickspeed+=effectduration
+expandboard()
+}
+
+if (window.addEventListener)
+window.addEventListener("load", startbill, false)
+else if (window.attachEvent)
+window.attachEvent("onload", startbill)
+else if (document.getElementById)
+window.onload=startbill
+
+    </script>
+
+    <!-- Start of StatCounter Code -->
+
+    <script type="text/javascript" language="javascript">
+var sc_project=2148620; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="8d4ac34d"; 
+var sc_remove_link=1; 
+    </script>
+
+ 
+    <!-- End of StatCounter Code -->
+    <!-- --------------------------- New Theme Styles ------------------------------- -->
+    <body onload="close_bar();">
+        <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <table border="0" width="100%" cellspacing="0" cellpadding="0" id="table1">
+            <tr>
+                <td>
+                    <table style="width: 100%; float: right; height: 35px;" bgcolor="white" cellspacing="0"
+                        cellpadding="0">
+                        <tr>
+                            <td valign="bottom" style="padding-right: 5px">
+                                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+                                    id="language" width="235" height="50" style="float: right">
+                                    <param name="movie" value="flash/language.swf" />
+                                    <param name="bgcolor" value="#ffffff" />
+                                    <param name="quality" value="Best" />
+                                    <param name="allowscriptaccess" value="samedomain" />
+                                    <param name="menu" value="false" />
+                                    <param name="scale" value="NoBorder" />
+                                    <param name="salign" value="R" />
+                                    <embed type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"
+                                        name="language" width="235" height="50" src="flash/language.swf" bgcolor="#ffffff"
+                                        quality="Best" allowscriptaccess="samedomain" menu="false" scale="NoBorder" salign="R">
+					
+					
+          			<noembed>
+          			</noembed>
+        			</embed>
+                                </object>
+                            </td>
+                            <td valign="bottom" style="width: 486px">
+                                <a title="آزمایشگاهها" class="aboutus" href="about/default.htm"></a><a title="مقالات"
+                                    class="home" href="Article.aspx"></a>&nbsp;
+                            </td>
+                            <td style="width: 271px">
+                                <a href="www.phasco.com">
+                                    <img alt="" src="images/logo.jpg" /></a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table style="width: 100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td class="style3">
+                              
+                                <uc5:TopMenu ID="TopMenu1" runat="server" />  <uc7:googlesearch ID="googlesearch1" runat="server" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div align="right">
+                        <table border="0" width="800" cellspacing="0" cellpadding="0" id="table2">
+                            <tr>
+                                <td valign="top">
+                                    <table class="style4">
+                                        <tr>
+                                            <td>
+                                                <asp:ContentPlaceHolder ID="Plc" runat="server">
+                                                </asp:ContentPlaceHolder>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td width="200" valign="top">
+                                    <table class="style5">
+                                        <tr>
+                                            <td align="right">
+                                                <uc4:ArticleList ID="ArticleList1" runat="server" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     
+                    <uc6:footer ID="footer1" runat="server" />
+                </td>
+            </tr>
+        </table>
+        </form>
+        <!-- Begin WebGozar.com Counter code -->
+<%--<script type="text/javascript" language="javascript" src="http://www.webgozar.ir/c.aspx?Code=1212868&amp;t=counter" ></script>
+<noscript><a href="http://www.webgozar.com/counter/stats.aspx?code=1212868" target="_blank">&#1570;&#1605;&#1575;&#1585;</a></noscript>--%>
+<!-- End WebGozar.com Counter code -->
+    </body>
+</html>

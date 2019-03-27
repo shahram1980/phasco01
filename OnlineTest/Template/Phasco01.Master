@@ -1,0 +1,343 @@
+﻿<%@ Master Language="C#"  EnableViewState="true" AutoEventWireup="true" CodeBehind="Phasco01.master.cs" Inherits="phasco.Template.Phasco01" %>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+   <title>سایت جامع علوم آزمایشگاهی و پزشکی فاسکو </title> 
+    
+<meta name="google-site-verification" content="RSGA6sB6jNgQjHE_LFihkn8ol66GmF_gLuwkkmf3pPE" />
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<%--<!-- GOOGLE   -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10093814-4");
+pageTracker._setDomainName("none");
+pageTracker._setAllowLinker(true);
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- GOOGLE   -->--%>
+
+<asp:ContentPlaceHolder runat="server" ID="head_Meta">
+
+
+</asp:ContentPlaceHolder>
+
+    <script type="text/javascript" language="JavaScript" src="Javaloading/progress.js"></script>
+
+    <script src="Java_High_Slide/highslide.js" type="text/javascript"></script>
+
+    <link href="Java_High_Slide/HighStyle.css" type="text/css" rel="stylesheet">
+
+    <script type="text/javascript">    
+hs.registerOverlay({
+	overlayId: 'closebutton',
+	position: 'top right',
+	fade: 2
+});
+
+hs.graphicsDir = 'Java_High_Slide/graphics/';
+    </script>
+
+<%--    <link rel="stylesheet" type="text/css" href="../CSS/art-style.css" />--%>
+    <link rel="stylesheet" type="text/css" href="../CSS/main-final.css" />
+    <link rel="stylesheet" type="text/css" href="css/ajaxtabs.css" />
+    <!-- Acaardion Java script & CSS -->
+
+    <script type="text/javascript" src="Java_Accardoin/jquery.js"></script>
+
+    <script type="text/javascript" src="Java_Accardoin/ddaccordion.js"></script>
+
+    <script type="text/javascript">
+ddaccordion.init({
+	headerclass: "silverheader", //Shared CSS class name of headers group
+	contentclass: "submenu", //Shared CSS class name of contents group
+	revealtype: "mouseover", //Reveal content when user clicks or onmouseover the header? Valid value: "click" or "mouseover
+	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+	collapseprev: true, //Collapse previous content (so only one open at any time)? true/false
+	defaultexpanded: [0], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+	onemustopen: true, //Specify whether at least one header should be open always (so never all headers closed)
+	animatedefault: false, //Should contents open by default be animated into view?
+	persiststate: true, //persist state of opened contents within browser session?
+	toggleclass: ["", "selected"], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+	togglehtml: ["", "", ""], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+	animatespeed: "normal", //speed of animation: "fast", "normal", or "slow"
+	oninit:function(headers, expandedindices){ //custom code to run when headers have initalized
+		//do nothing
+	},
+	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+		//do nothing
+	}
+})
+
+    </script>
+
+    <style type="text/css">
+        .applemenu
+        {
+            margin: 5px 0;
+            padding: 0;
+            width: 100%; /*width of menu*/
+            border: 1px solid #9A9A9A;
+            float: right;
+        }
+        .applemenu div.silverheader a
+        {
+            background: black url(Java_Accardoin/silvergradient.gif) repeat-x center left;
+            font: normal 12px Tahoma, "Lucida Grande" , "Trebuchet MS" , Helvetica, sans-serif;
+            color: white;
+            display: block;
+            position: relative; /*To help in the anchoring of the ".statusicon" icon image*/
+            width: auto;
+            padding: 5px 0;
+            padding-left: 8px;
+            text-decoration: none;
+        }
+        .applemenu div.silverheader a:visited, .applemenu div.silverheader a:active
+        {
+            color: white;
+        }
+        .applemenu div.selected a, .applemenu div.silverheader a:hover
+        {
+            background-image: url(Java_Accardoin/silvergradientover.gif);
+            color: white;
+        }
+        .applemenu div.submenu
+        {
+            /*DIV that contains each sub menu*/
+            background: white;
+            padding: 5px;
+            height: 130px; /*Height that applies to all sub menu DIVs. A good idea when headers are toggled via "mouseover" instead of "click"*/
+        }
+    </style>
+    <!-- Acaardion Java script & CSS -->
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" style="margin: 0px;
+    background-image: url('../images/bg.jpg');" onload="close_bar();">
+    
+    <!-- Start of StatCounter Code -->
+    <script type="text/javascript" language="javascript">
+var sc_project=2148620; 
+var sc_invisible=1; 
+var sc_partition=19; 
+var sc_security="8d4ac34d"; 
+var sc_remove_link=1; 
+    </script>
+ 
+    <!-- End of StatCounter Code -->
+    
+    <!-- --------------------------- New Theme Styles ------------------------------- -->
+    <script type="text/javascript" src="js/ajaxtabs.js"></script>
+    <script type="text/javascript">
+var billboardeffects=["GradientWipe(GradientSize=1.0 Duration=0.7)", "Inset", "Iris", "Pixelate(MaxSquare=5 enabled=false)", "RadialWipe", "RandomBars", "Slide(slideStyle='push')", "Spiral", "Stretch", "Strips", "Wheel", "ZigZag"]
+
+var tickspeed=6000 
+var effectduration=2000 
+var hidecontent_from_legacy=1
+
+var filterid=Math.floor(Math.random()*billboardeffects.length)
+
+document.write('<style type="text/css">\n')
+if (document.getElementById)
+document.write('.billcontent{display:none;\n'+'filter:progid:DXImageTransform.Microsoft.'+billboardeffects[filterid]+'}\n')
+else if (hidecontent_from_legacy)
+document.write('#contentwrapper{display:none;}')
+document.write('</style>\n')
+
+var selectedDiv=0
+var totalDivs=0
+
+function contractboard(){
+var inc=0
+while (document.getElementById("billboard"+inc)){
+document.getElementById("billboard"+inc).style.display="none"
+inc++
+}
+}
+
+function expandboard(){
+var selectedDivObj=document.getElementById("billboard"+selectedDiv)
+contractboard()
+if (selectedDivObj.filters){
+if (billboardeffects.length>1){
+filterid=Math.floor(Math.random()*billboardeffects.length)
+selectedDivObj.style.filter="progid:DXImageTransform.Microsoft."+billboardeffects[filterid]
+}
+selectedDivObj.filters[0].duration=effectduration/1000
+selectedDivObj.filters[0].Apply()
+}
+selectedDivObj.style.display="block"
+if (selectedDivObj.filters)
+selectedDivObj.filters[0].Play()
+selectedDiv=(selectedDiv<totalDivs-1)? selectedDiv+1 : 0
+setTimeout("expandboard()",tickspeed)
+}
+
+function startbill(){
+while (document.getElementById("billboard"+totalDivs)!=null)
+totalDivs++
+if (document.getElementById("billboard0").filters)
+tickspeed+=effectduration
+expandboard()
+}
+
+if (window.addEventListener)
+window.addEventListener("load", startbill, false)
+else if (window.attachEvent)
+window.attachEvent("onload", startbill)
+else if (document.getElementById)
+window.onload=startbill
+
+    </script>
+    <!-- --------------------------- New Theme Styles ------------------------------- -->
+    <form id="form1" runat="server">
+    <table border="0" width="100%" cellspacing="0" cellpadding="0" id="table1">
+        <tr>
+            <td>
+                <table style="width: 100%; float: right; height: 35px;" bgcolor="white" cellspacing="0"
+                    cellpadding="0">
+                    <tr>
+                        <td valign="bottom" style="padding-right: 5px;">
+                            
+
+
+
+
+
+
+
+
+
+        
+                       </td>
+                        <td valign="bottom" style="width: 486px">
+            
+                        </td>
+                        <td style="width: 271px">
+                          
+                                <img alt=",هورمونی,الایزا,کیت,آزمایشگاه,فاسکو" src="../images/logo.jpg" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td class="style3">
+                            &nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div align="right">
+                    <table border="0" width="800" cellspacing="0" cellpadding="0" id="table2">
+                        <tr>
+                            <td valign="top" style="background: #fff;">
+                                <table class="style4">
+                                    <tr>
+                                        <td style="height: 700px;background-color:#fff;" valign="top">
+                                          <table style="width:100%; direction:rtl;">
+    <tr>
+ 
+    
+        <td style="width:25%; text-align:right;">
+        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Admin/ManageField.aspx">مدیریت گروه ها و رشته های مرتبط</asp:HyperLink>
+    </td>
+    
+       
+    <td style="width:25%; text-align:right;">
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/ManageDegree.aspx">مدیریت مقاطع تحصیلی</asp:HyperLink>
+    </td>
+        <td style="width:25%; text-align:right;">
+        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Admin/ManageLessons.aspx">مدیریت دروس و سوالات</asp:HyperLink>
+    </td>
+    
+            <td style="width:25%; text-align:right;">
+        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Admin/ManageLessonType.aspx">مدیریت نوع دروس</asp:HyperLink>
+    </td>
+    
+
+    
+    </tr>
+    </table>
+    <hr  style="color:Navy;"/>
+                                            <asp:ContentPlaceHolder ID="Plc" runat="server">
+                                            </asp:ContentPlaceHolder>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="200" valign="top">
+                                <table class="style5">
+                                    <tr>
+                                        <td align="right">
+                                            <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+                                         
+                                                <tr>
+                                                    <td class="style18" style="text-align: right; height: 115px;" valign="top">
+                                                        &nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 100%">
+                                                        &nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 100%">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            &nbsp;&nbsp;
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td class="style8">
+                            <table cellspacing="0" cellpadding="0" style="width: 100%" align="right">
+                                <tr>
+                                    <td class="style20" style="height: 32px" align="center">
+                                        پیاده سازی و اجرا : <a href="http://www.perisanweb.com" title="گروه فن آوری اطلاعات پریسان">
+                                            پریسان </a>
+                                    </td>
+                                    <td style="width: 514px; height: 32px;" align="right" dir="rtl">
+                                        &nbsp;<p>
+                                            کلیه حقوق این سایت برای شرکت تحقیقاتی تولیدی فارمد آوران سبز محفوظ است ©
+                                            <br />
+                                        </p>
+                                    </td>
+                                    <td style="height: 32px">
+                                    </td>
+                                    <td style="width: 50px; height: 32px;">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </form>
+<div style="display: none">
+ 
+</div>
+</body>
+</html>

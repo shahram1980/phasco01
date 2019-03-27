@@ -1,0 +1,238 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Weblog.master.cs" Inherits="PHASCO_WEB.Template.Weblog" %>
+
+<%@ Register Src="../UI/Membership.ascx" TagName="Membership" TagPrefix="uc1" %>
+<%@ Register Src="../UI/NewsFlash.ascx" TagName="NewsFlash" TagPrefix="uc9" %>
+<%@ Register Src="../UI/footer.ascx" TagName="footer" TagPrefix="uc3" %>
+<%@ Register Src="UI/googlesearch.ascx" TagName="googlesearch" TagPrefix="uc7" %>
+<%@ Register Src="UI/TopMenu.ascx" TagName="TopMenu" TagPrefix="uc6" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>سایت علوم آزمایشگاهی فاسکو</title>
+    <meta name="google-site-verification" content="RSGA6sB6jNgQjHE_LFihkn8ol66GmF_gLuwkkmf3pPE" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- GOOGLE   -->
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-10093814-7");
+            pageTracker._setDomainName("none");
+            pageTracker._setAllowLinker(true);
+            pageTracker._trackPageview();
+        } catch (err) { }</script>
+    <!-- GOOGLE   -->
+
+    <link rel="stylesheet" href="~/theme/css/bootstrap.css" type="text/css" media="screen" />
+    <!-- REVOLUTION BANNER CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="~/theme/css/fullwidth.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/settings.css" media="screen" />
+
+    <link rel="stylesheet" type="text/css" href="~/theme/css/magnific-popup.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/owl.carousel.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/owl.theme.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/jquery.bxslider.css" media="screen" />
+
+    <link href="../Theme/css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/responsive.css" media="screen" />
+
+    <script type="text/javascript" src="../theme/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../theme/js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+
+    <!-- Start of StatCounter Code -->
+    <script type="text/javascript" lang="javascript">
+        var sc_project = 2148620;
+        var sc_invisible = 1;
+        var sc_partition = 19;
+        var sc_security = "8d4ac34d";
+        var sc_remove_link = 1;
+    </script>
+    <!-- End of StatCounter Code -->
+    <asp:ContentPlaceHolder runat="server" ID="head_Meta">
+    </asp:ContentPlaceHolder>
+    <!-- End of StatCounter Code -->
+
+
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="container">
+
+            <div id="">
+                <!--header =====================================================!-->
+
+                <uc6:TopMenu ID="TopMenu1" runat="server" />
+
+                <!-- End Header -->
+
+                <!-- content
+            ================================================== -->
+                <div id="content">
+
+                    <div class="blog-box with-2col">
+                        <div class="container">
+                            <div class="row">
+
+                                <div class="col-md-9 blog-side">
+
+
+                                    <%--  <asp:Panel ID="PnlMessages" runat="server" Width="100%"  CssClass="alert alert-warning fade in alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>    
+                                    <strong><asp:Image ID="imgMessageIcon" runat="server" Width="32" Height="32" />
+
+                                        <asp:Label ID="lblMessagesTitle" runat="server" Font-Bold="True"></asp:Label>
+                                    </strong>
+
+                                     <asp:Label ID="lblMessages" runat="server"></asp:Label>
+                                    
+                                </asp:Panel>--%>
+
+                                    <asp:ContentPlaceHolder ID="Plc" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </div>
+
+                                <div class="col-md-3 sidebar">
+                                    <div class="sidebar-widgets">
+
+                                        <%--<uc1:Membership ID="Membership2" runat="server" />--%>
+                                        <div class="text-widget widget">
+                                            <h5>آدرس این وب لاگ</h5>
+
+                                            <div class="contact-form">
+                                                <div class="text-input">
+                                                    <div class="float-input">
+                                                        <asp:TextBox ID="TextBox_Url" runat="server" CssClass="copy-containar"></asp:TextBox>
+                                                        <a class="btn copy-btn" data-clipboard-target="#ctl00_TextBox_Url">
+                                                            <i class="fa fa-copy" data-clipboard-target="#ctl00_TextBox_Url"></i>
+                                                        </a>
+                                                        <script>
+                                                            var clipboard = new Clipboard('.btn');
+                                                        </script>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="suggestions" id="sticky-sidebar">
+
+                                            <div class="follow-user">
+
+                                                <asp:Image ID="Image_User" runat="server" CssClass="profile-photo-sm pull-right" ImageUrl="~/phascoupfile/Userphoto/Nopic.jpg" />
+                                                <div>
+
+
+                                                    <h5><a href="UserProfile.aspx?id=<%= userId %>">
+                                                        <asp:Label ID="Label_Name" runat="server"></asp:Label></a></h5>
+                                                    <p>
+                                                        <asp:HyperLink ID="HyperLink_UserLine" CssClass="text-green" runat="server">[HyperLink_UserLine]</asp:HyperLink>
+                                                    </p>
+                                                    <p>
+                                                        <asp:HyperLink ID="HyperLink_PM" CssClass="text-green" runat="server">[HyperLink_PM]</asp:HyperLink>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="shop-widget">
+                                            <h4>آرشيو نوشته ها</h4>
+                                            <ul class="widget-item">
+
+                                                <asp:Repeater ID="DataList_Archive" runat="server">
+                                                    <ItemTemplate>
+                                                        <li>
+                                                            <h6><a href="Wblog.aspx?Bid=<% Response.Write(Request.QueryString["Bid"].ToString()); %>&arc=<%# Eval("DateFarsi") %>">
+                                                                <%# Eval("DateFarsi") %>
+                                                            </a>
+                                                            </h6>
+                                                        </li>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
+
+
+
+
+                                            </ul>
+
+                                        </div>
+
+                                        <div class="shop-widget">
+                                            <h4>پیوندها</h4>
+                                            <ul class="widget-item">
+                                                <asp:Repeater ID="Repeater_Links" runat="server">
+                                                    <ItemTemplate>
+                                                        <li>
+                                                            <h6><a href="<%# Eval("Url")%>" title="<%# Eval("Title")%>" target="_blank">
+                                                                <%# Eval("Title")%></a></h6>
+                                                        </li>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
+                                            </ul>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+
+    <!-- End content -->
+   <%-- <footer>
+
+        <div class="footer-line">
+            <div class="container">
+                <p><% Response.Write(DateTime.Now.Year); %>  © کلیه حقوق مادی و معنوی این سایت برای شرکت تحقیقاتی و تولیدی فارمد آوران سبز محفوظ است</p>
+            </div>
+        </div>
+    </footer>--%>
+
+    <%--    <div style="display: none">
+        <!-- Begin WebGozar.com Counter code -->
+<script type="text/javascript" language="javascript" src="http://www.webgozar.ir/c.aspx?Code=1212868&amp;t=counter" ></script>
+<noscript><a href="http://www.webgozar.com/counter/stats.aspx?code=1212868" target="_blank">&#1570;&#1605;&#1575;&#1585;</a></noscript>
+<!-- End WebGozar.com Counter code -->
+    </div>--%>
+
+    <!-- Start of StatCounter Code -->
+    <script type="text/javascript" lang="javascript">
+                                                            var sc_project = 2148620;
+                                                            var sc_invisible = 1;
+                                                            var sc_partition = 19;
+                                                            var sc_security = "8d4ac34d";
+                                                            var sc_remove_link = 1;
+    </script>
+
+    <!-- End of StatCounter Code -->
+    <script type="text/javascript" src="../theme/js/jquery.migrate.js"></script>
+    <script type="text/javascript" src="../theme/js/jquery.magnific-popup.min.js"></script>
+
+    <script type="text/javascript" src="../theme/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="../theme/js/raphael-min.js"></script>
+    <script type="text/javascript" src="../theme/js/DevSolutionSkill.min.js"></script>
+    <%--<script type="text/javascript" src="../theme/js/retina-1.1.0.min.js"></script>--%>
+    <script type="text/javascript" src="../theme/js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="../theme/js/plugins-scroll.js"></script>
+
+    <!-- jQuery KenBurn Slider  -->
+    <script type="text/javascript" src="../theme/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="../theme/js/script.js"></script>
+
+
+</body>
+</html>

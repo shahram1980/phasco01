@@ -1,0 +1,90 @@
+~~ FCKeditor - The text editor for Internet - http://www.fckeditor.net
+~~ Copyright (C) 2004-2010 Frederico Caldeira Knabben
+~~
+~~ == BEGIN LICENSE ==
+~~
+~~ Licensed under the terms of any of the following licenses at your
+~~ choice:
+~~
+~~  - GNU General Public License Version 2 or later (the "GPL")
+~~    http://www.gnu.org/licenses/gpl.html
+~~
+~~  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+~~    http://www.gnu.org/licenses/lgpl.html
+~~
+~~  - Mozilla Public License Version 1.1 or later (the "MPL")
+~~    http://www.mozilla.org/MPL/MPL-1.1.html
+~~
+~~ == END LICENSE ==
+~~ @version $Id: userpathbuilder.apt 4785 2009-12-21 20:10:28Z mosipov $
+				--------------------------------
+					UserPathBuilder Interface
+				--------------------------------
+
+Userpath builder
+
+  The integration pack offers you control over the path under which files from the
+  File Browser are stored and browsed, additionally the URL they are reflected by.
+
+  Read on to see how you can refit the system to your needs:
+
+* Rationale
+
+  Hard-coded storage paths can be cumbersome under certain circumstances. You may
+  need to change the storage path on-the-fly or serve paths on a user/request
+  basis. You are able to calculate the absolute storage path as well as the responded
+  URL the way you want according to the underlying {{{connector.html}Connector}}.
+
+* The interface
+
+  Consult the JavaDocs of the interface {{{java-core/apidocs/net/fckeditor/requestcycle/UserPathBuilder.html}<<<net.fckeditor.requestcycle.UserPathBuilder>>>}}
+  to see how it works.
+
+** Choosing an implementation
+
+  You have to choose an implementation, either an existing or a custom one.
+
+  Ready-to-go implementations:
+
+   * {{{java-core/apidocs/net/fckeditor/requestcycle/impl/ContextPathBuilder.html}<<<net.fckeditor.requestcycle.impl.ContextPathBuilder>>>}} (default):
+     It always returns <<<connector.userFilesPath>>> with the current context
+     prepended and <<<connector.userFilesAbsolutePath>>> as-is.
+
+   * {{{java-core/apidocs/net/fckeditor/requestcycle/impl/ServerRootPathBuilder.html}<<<net.fckeditor.requestcycle.impl.ServerRootPathBuilder>>>}}:
+     It always returns <<<connector.userFiles*Path>>> properties as-is.
+
+   []
+
+  If no existing implementation suits your needs, create your own. Implement the
+  interface and resolve the paths the way you want.
+
+** Declaring an implementation
+
+   After your have chosen your desired implementation, you have to declare it.
+   Put the fully-qualified class name of the implementation in your
+   <<<fckeditor.properties>>>:
+
++------------------------------------------------------------------------------+
+  connector.userPathBuilderImpl=<desired implementation>
++------------------------------------------------------------------------------+
+
+* Path configuration
+
+  There is one common way to easily configure paths for an existing or a custom
+  implementation:
+  Create/edit the <<<fckeditor.properties>>> and set <<<connector.userFilesPath>>>
+  and <<<connector.userFilesAbsolutePath>>> properties according to the semantics of
+  the chosen implementation (see {{{properties.html}Configuration}} for details).
+
+  If you decide to create your own implementation, you are free to use our properties
+  but if you do so, access them by calling <<<PropertiesLoader#getUserFilesPath>>>
+  and <<<PropertiesLoader#getUserFilesAbsolutePath>>>.
+
+  If this still does not fit your needs, calculate the paths dynamically in the
+  getter methods and return whatever makes sense to you.
+
+    [Attention:] Every Connector relies on a specific <<<UserPathBuilder>>> implementation
+                 because it serves the paths the way the connector needs them.
+                 Make sure that your implementation is accompanied by the correct
+                 Connector. E.g. using the <<<ContextPathBuilder>>> with the <<<LocalConnector>>>
+                 may result in erroneous and undefined behavior.

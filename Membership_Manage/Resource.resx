@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Address" xml:space="preserve">
+    <value>AddressEN</value>
+  </data>
+  <data name="Address1" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="addressF" xml:space="preserve">
+    <value>addressEN</value>
+  </data>
+  <data name="addtocart" xml:space="preserve">
+    <value>add card</value>
+  </data>
+  <data name="align" xml:space="preserve">
+    <value>left</value>
+  </data>
+  <data name="align1" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="Articles" xml:space="preserve">
+    <value>مقالات</value>
+  </data>
+  <data name="Atlas" xml:space="preserve">
+    <value>اطلس ها</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Blogs" xml:space="preserve">
+    <value>وبلاگ ها</value>
+  </data>
+  <data name="Blog_Succcess_Inser" xml:space="preserve">
+    <value>Your web log has been registered successfully</value>
+  </data>
+  <data name="Body" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="code" xml:space="preserve">
+    <value>Code :</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="Comment_Tick" xml:space="preserve">
+    <value>Let others send their idea.</value>
+  </data>
+  <data name="Companys" xml:space="preserve">
+    <value>شرکت ها</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>تماس باما</value>
+  </data>
+  <data name="ContactUs1" xml:space="preserve">
+    <value>تماس باما</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Delete_Confirm" xml:space="preserve">
+    <value>Are you sure you want to delete?</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="DetailsF" xml:space="preserve">
+    <value>DetailsEN</value>
+  </data>
+  <data name="DetailsImage" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="dir" xml:space="preserve">
+    <value>ltr</value>
+  </data>
+  <data name="dir1" xml:space="preserve">
+    <value>ltr</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Edit_Bottom" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Error_ShowMss" xml:space="preserve">
+    <value>an error reported while operating</value>
+  </data>
+  <data name="FAQ" xml:space="preserve">
+    <value>پرسش و پاسخ</value>
+  </data>
+  <data name="fax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="Foods" xml:space="preserve">
+    <value>FoodsEN</value>
+  </data>
+  <data name="Footer1" xml:space="preserve">
+    <value>All Rights Reserved.&lt;a href="http://Phasco.ir "&gt; Pharmed Avarad Sabz Company.&lt;/a&gt;</value>
+  </data>
+  <data name="Home_Page" xml:space="preserve">
+    <value>صفحه اصلی</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>ItemEN</value>
+  </data>
+  <data name="Labs" xml:space="preserve">
+    <value>آزمایشگاه ها</value>
+  </data>
+  <data name="Levels" xml:space="preserve">
+    <value>Levels</value>
+  </data>
+  <data name="Login_First" xml:space="preserve">
+    <value> First, please log in</value>
+  </data>
+  <data name="Login_Msg_Invalid" xml:space="preserve">
+    <value>نام کاربری يا رمز معتبر نمی باشد</value>
+  </data>
+  <data name="Manager" xml:space="preserve">
+    <value>ManagerEN</value>
+  </data>
+  <data name="MonyUnit" xml:space="preserve">
+    <value>Euro</value>
+  </data>
+  <data name="Mr" xml:space="preserve">
+    <value>Mr</value>
+  </data>
+  <data name="Mss" xml:space="preserve">
+    <value>Mss</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>NameEn</value>
+  </data>
+  <data name="nameF" xml:space="preserve">
+    <value>nameEN</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>اخبار</value>
+  </data>
+  <data name="Nlab" xml:space="preserve">
+    <value>Name of Laboratory</value>
+  </data>
+  <data name="nofound" xml:space="preserve">
+    <value>&lt;font color='#fb0206'&gt;For Your Searched Items, There are no results&lt;/font&gt;</value>
+  </data>
+  <data name="OutBox" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Page_Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Phasco_News" xml:space="preserve">
+    <value>Phasco news</value>
+  </data>
+  <data name="Phasco_New_Article" xml:space="preserve">
+    <value>جدید ترین مقالات</value>
+  </data>
+  <data name="PHasco_Top_Articel" xml:space="preserve">
+    <value>پرخواننده ترین مقالات</value>
+  </data>
+  <data name="Phasco_Users" xml:space="preserve">
+    <value>کاربران فاسکو</value>
+  </data>
+  <data name="Phasco_Users_Newst" xml:space="preserve">
+    <value>Newest Users</value>
+  </data>
+  <data name="Phasco_WEblog" xml:space="preserve">
+    <value>Phsco Blog's</value>
+  </data>
+  <data name="Price_Text" xml:space="preserve">
+    <value>Price :</value>
+  </data>
+  <data name="Product_Comment" xml:space="preserve">
+    <value>Comment : </value>
+  </data>
+  <data name="Product_Group" xml:space="preserve">
+    <value>TAX :</value>
+  </data>
+  <data name="Product_name" xml:space="preserve">
+    <value>Product name : </value>
+  </data>
+  <data name="Province" xml:space="preserve">
+    <value>Province</value>
+  </data>
+  <data name="province1" xml:space="preserve">
+    <value>Province</value>
+  </data>
+  <data name="qty" xml:space="preserve">
+    <value>qty :</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>QuestionEN</value>
+  </data>
+  <data name="Region" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="Reg_Form_Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Res1" xml:space="preserve">
+    <value>Itmes Found</value>
+  </data>
+  <data name="Res2" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="R_Address" xml:space="preserve">
+    <value>آدرس</value>
+  </data>
+  <data name="R_Birthday" xml:space="preserve">
+    <value>Birthdat</value>
+  </data>
+  <data name="R_BirthDayLocation" xml:space="preserve">
+    <value>Birth Day Location</value>
+  </data>
+  <data name="R_Birthday_Day" xml:space="preserve">
+    <value>روز</value>
+  </data>
+  <data name="R_Birthday_Month" xml:space="preserve">
+    <value>ماه</value>
+  </data>
+  <data name="R_Birthday_Year" xml:space="preserve">
+    <value>سال</value>
+  </data>
+  <data name="R_City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="R_country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="R_Email" xml:space="preserve">
+    <value>پست الکترونیک</value>
+  </data>
+  <data name="R_err_confirm_Password" xml:space="preserve">
+    <value>نام های رمز وارده با هم يکسان نمي باشد . هردو نام رمز وارده بايد با هم يکسان باشند .مجددا وارد نمائيد.  </value>
+  </data>
+  <data name="R_err_Email" xml:space="preserve">
+    <value>پست الکترونیک نا معتبر است</value>
+  </data>
+  <data name="R_err_Final" xml:space="preserve">
+    <value>کاربر محترم ضمن تقدیر و تشکر، مشخصات شما با موفقيت درج گرديد.</value>
+  </data>
+  <data name="R_err_Final_Massge" xml:space="preserve">
+    <value>پس از بررسی مدير سایت و در صورت تایید، تائیدیه نام کاربری و رمز عبور شما به آدرس پست الکترونیکی شما ارسال می گردد.( توجه : اگر از خدمات پست الکترونيک Yahoo استفاده می کنید ممکن است نامه مربوطه به قسمت Bulk ارسال شود).
+</value>
+  </data>
+  <data name="R_err_Has_Uid" xml:space="preserve">
+    <value> نام کاربری وارده قبلا ثبت شده نام کاربری ديگری را وارد کنيد. </value>
+  </data>
+  <data name="R_Example" xml:space="preserve">
+    <value>زمينه فعاليت مؤسسه</value>
+  </data>
+  <data name="R_fax" xml:space="preserve">
+    <value>FAX</value>
+  </data>
+  <data name="R_Female" xml:space="preserve">
+    <value>زن</value>
+  </data>
+  <data name="R_Firstname" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="R_Intro" xml:space="preserve">
+    <value>Introducer</value>
+  </data>
+  <data name="R_Lab_Name" xml:space="preserve">
+    <value>نام مؤسسه / نام آزمايشگاه</value>
+  </data>
+  <data name="R_Lastname" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="R_Male" xml:space="preserve">
+    <value>مرد</value>
+  </data>
+  <data name="R_Manager" xml:space="preserve">
+    <value>نام مدير / مسئول فنی</value>
+  </data>
+  <data name="R_Marride" xml:space="preserve">
+    <value>تاهل </value>
+  </data>
+  <data name="R_Marride_M" xml:space="preserve">
+    <value>متاهل</value>
+  </data>
+  <data name="R_Marride_S" xml:space="preserve">
+    <value>مجرد</value>
+  </data>
+  <data name="R_Mobile" xml:space="preserve">
+    <value>موبایل</value>
+  </data>
+  <data name="R_Pass" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="R_rpass" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="R_r_Study" xml:space="preserve">
+    <value>رشته تحصیلی</value>
+  </data>
+  <data name="R_SEX" xml:space="preserve">
+    <value>جنسیت</value>
+  </data>
+  <data name="R_State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="R_Study" xml:space="preserve">
+    <value>تحصیلات</value>
+  </data>
+  <data name="R_Study01" xml:space="preserve">
+    <value>فوق دکترا</value>
+  </data>
+  <data name="R_Study02" xml:space="preserve">
+    <value>دکترا</value>
+  </data>
+  <data name="R_Study03" xml:space="preserve">
+    <value>کارشناسی ارشد</value>
+  </data>
+  <data name="R_Study04" xml:space="preserve">
+    <value>کارشناسی</value>
+  </data>
+  <data name="R_Study05" xml:space="preserve">
+    <value>کاردانی</value>
+  </data>
+  <data name="R_Study06" xml:space="preserve">
+    <value>دیپلم</value>
+  </data>
+  <data name="R_Submit" xml:space="preserve">
+    <value>ثبت شود</value>
+  </data>
+  <data name="R_tel" xml:space="preserve">
+    <value>تلفن</value>
+  </data>
+  <data name="R_username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="R_Visit_Phasco" xml:space="preserve">
+    <value>نحوه آشنايی با شرکت فاسکو</value>
+  </data>
+  <data name="R_Websitge" xml:space="preserve">
+    <value>وب سایت</value>
+  </data>
+  <data name="s1" xml:space="preserve">
+    <value>Azarbayejan Eastern</value>
+  </data>
+  <data name="s10" xml:space="preserve">
+    <value>Khorasan Razavi</value>
+  </data>
+  <data name="s11" xml:space="preserve">
+    <value>Khorasan Northern</value>
+  </data>
+  <data name="s12" xml:space="preserve">
+    <value>Khouzestan</value>
+  </data>
+  <data name="s13" xml:space="preserve">
+    <value>Zanjan</value>
+  </data>
+  <data name="s14" xml:space="preserve">
+    <value>Semnan</value>
+  </data>
+  <data name="s15" xml:space="preserve">
+    <value>Sistam &amp; Balochestan</value>
+  </data>
+  <data name="s16" xml:space="preserve">
+    <value>Fars</value>
+  </data>
+  <data name="s17" xml:space="preserve">
+    <value>Ghazvin</value>
+  </data>
+  <data name="s18" xml:space="preserve">
+    <value>Qom</value>
+  </data>
+  <data name="s19" xml:space="preserve">
+    <value>Kordestan</value>
+  </data>
+  <data name="s2" xml:space="preserve">
+    <value>Azarbayejan Western</value>
+  </data>
+  <data name="s20" xml:space="preserve">
+    <value>Kerman</value>
+  </data>
+  <data name="s21" xml:space="preserve">
+    <value>Kermanshah</value>
+  </data>
+  <data name="s22" xml:space="preserve">
+    <value>Kohkiloye &amp; boyerahmad</value>
+  </data>
+  <data name="s23" xml:space="preserve">
+    <value>Golestan</value>
+  </data>
+  <data name="s24" xml:space="preserve">
+    <value>Gilan</value>
+  </data>
+  <data name="s25" xml:space="preserve">
+    <value>Lorestan</value>
+  </data>
+  <data name="s26" xml:space="preserve">
+    <value>Mazandaran</value>
+  </data>
+  <data name="s27" xml:space="preserve">
+    <value>Markazi</value>
+  </data>
+  <data name="s28" xml:space="preserve">
+    <value>Hormozgan</value>
+  </data>
+  <data name="s29" xml:space="preserve">
+    <value>Hamedan</value>
+  </data>
+  <data name="s3" xml:space="preserve">
+    <value>Ardebil</value>
+  </data>
+  <data name="s30" xml:space="preserve">
+    <value>Yazd</value>
+  </data>
+  <data name="s4" xml:space="preserve">
+    <value>Isfehan</value>
+  </data>
+  <data name="s5" xml:space="preserve">
+    <value>Ilam</value>
+  </data>
+  <data name="s6" xml:space="preserve">
+    <value>Boushehr</value>
+  </data>
+  <data name="s7" xml:space="preserve">
+    <value>Tehran</value>
+  </data>
+  <data name="s8" xml:space="preserve">
+    <value>Chahar Mahal &amp; Bakhtiari</value>
+  </data>
+  <data name="s9" xml:space="preserve">
+    <value>Khorasan Southern</value>
+  </data>
+  <data name="SatateF" xml:space="preserve">
+    <value>SatateEN</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="shoping_Cart_Empty" xml:space="preserve">
+    <value>Shoping Cart is Empty</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>Home_Page_Text</value>
+  </data>
+  <data name="Success_Tra" xml:space="preserve">
+    <value />
+  </data>
+  <data name="technical" xml:space="preserve">
+    <value>Technical Manager</value>
+  </data>
+  <data name="Tel" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>TimeEN</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="User_card_CheckOut" xml:space="preserve">
+    <value>~/images/Buy_Now_f.Gif</value>
+  </data>
+  <data name="user_Card_NotAvliableProducts" xml:space="preserve">
+    <value>This products not avliable to price</value>
+  </data>
+  <data name="User_card_total_Price" xml:space="preserve">
+    <value>Total price :</value>
+  </data>
+  <data name="Vote_Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Vote_Inserted" xml:space="preserve">
+    <value> Your idea has been reported successfully</value>
+  </data>
+  <data name="Vote_Result" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="Wait" xml:space="preserve">
+    <value>Please Wait ...</value>
+  </data>
+  <data name="WebSite" xml:space="preserve">
+    <value>WebSite</value>
+  </data>
+  <data name="Worktime" xml:space="preserve">
+    <value>Working Time</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="WelcomeMss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\WelcomeMss.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+</root>

@@ -1,0 +1,782 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="phasco.com_ArticleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'phasco.com_Article.dbo.alluserlogin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="alluserlogin">
+          <Key>
+            <PropertyRef Name="username" />
+            <PropertyRef Name="permission" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="passname" Type="nvarchar" MaxLength="50" />
+          <Property Name="permission" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="GroupAdmin" Type="char" MaxLength="16" />
+          <Property Name="siteAdmin" Type="char" MaxLength="16" />
+          <Property Name="EntryAdmin" Type="char" MaxLength="16" />
+          <Property Name="Types" Type="char" MaxLength="16" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'phasco.com_Article.dbo.T_Atlas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="T_Atlas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubId" Type="int" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Date_Ins" Type="datetime" />
+          <Property Name="Visit" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'phasco.com_Article.dbo.T_Atlas_Comment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="T_Atlas_Comment">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="AtlasID" />
+            <PropertyRef Name="Uid" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AtlasID" Type="int" Nullable="false" />
+          <Property Name="Uid" Type="int" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="2000" />
+          <Property Name="dateins" Type="datetime" />
+          <Property Name="UserScore" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'phasco.com_Article.dbo.T_Atlas_Comment_UserScore' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="T_Atlas_Comment_UserScore">
+          <Key>
+            <PropertyRef Name="CommentId" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="CommentId" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="UID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'phasco.com_Article.dbo.T_Atlas_Group' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="T_Atlas_Group">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" />
+          <Property Name="Visitcount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'phasco.com_Article.dbo.TasbitVisitControl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TasbitVisitControl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="DateEN" Type="datetime" />
+          <Property Name="Url" Type="char" MaxLength="50" />
+          <Property Name="FarsiDay" Type="int" />
+          <Property Name="FarsiMonth" Type="int" />
+          <Property Name="FarsiYears" Type="int" />
+          <Property Name="Times" Type="int" />
+          <Property Name="TimeMode" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'phasco.com_Article.dbo.Tractate_List' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tractate_List">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubLevel" Type="int" />
+          <Property Name="SubJect" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateEn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'phasco.com_Article.dbo.Tractate_Message' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tractate_Message">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ComentId" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubId" Type="int" />
+          <Property Name="UserMode" Type="char" MaxLength="50" />
+          <Property Name="Uid" Type="char" MaxLength="255" />
+          <Property Name="Name" Type="ntext" />
+          <Property Name="Famil" Type="ntext" />
+          <Property Name="Tel" Type="char" MaxLength="255" />
+          <Property Name="Email" Type="char" MaxLength="255" />
+          <Property Name="UserTitle" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SendText" Type="ntext" />
+          <Property Name="SendDateEn" Type="datetime" />
+          <Property Name="SendDateFa" Type="ntext" />
+          <Property Name="Archive" Type="char" MaxLength="5" />
+          <Property Name="AccessView" Type="char" MaxLength="5" />
+          <Property Name="ComentId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="ntext" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'phasco.com_Article.dbo.Tractate_TasbitAnswer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tractate_TasbitAnswer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdAnswer" Type="int" />
+          <Property Name="TasbitAnswer" Type="ntext" />
+          <Property Name="dATEFA" Type="nvarchar" MaxLength="300" />
+          <Property Name="dateen" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'phasco.com_Article.dbo.Tractate_Text' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tractate_Text">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubId" Type="int" />
+          <Property Name="UID_ID" Type="int" />
+          <Property Name="SubJect" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Writer" Type="nvarchar" MaxLength="500" />
+          <Property Name="Ref" Type="nvarchar" MaxLength="500" />
+          <Property Name="ManElm" Type="nvarchar" MaxLength="50" />
+          <Property Name="RefNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="keyWork" Type="nvarchar" MaxLength="1500" />
+          <Property Name="keyWorkOtherLan" Type="nvarchar" MaxLength="1500" />
+          <Property Name="ShortText" Type="nvarchar" MaxLength="3000" />
+          <Property Name="ShortTextOtherLan" Type="nvarchar" MaxLength="1500" />
+          <Property Name="Translator" Type="nvarchar" MaxLength="255" />
+          <Property Name="PersianSource" Type="nvarchar" MaxLength="2000" />
+          <Property Name="EnglishSource" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Text" Type="ntext" />
+          <Property Name="DateIns" Type="datetime" />
+          <Property Name="Active" Type="nvarchar" MaxLength="3" />
+          <Property Name="ClickNumber" Type="int" />
+          <Property Name="title_Offer" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SubTitle_Offer" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Offer" Type="char" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'phasco.com_Article.dbo.Tractate_User_Properties' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tractate_User_Properties">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="Id" Type="int" />
+          <Property Name="AutoId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Famil" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tahsilat" Type="nvarchar" MaxLength="100" />
+          <Property Name="Reshte" Type="nvarchar" MaxLength="100" />
+          <Property Name="Rotbeye_elmi" Type="nvarchar" MaxLength="100" />
+          <Property Name="Daneshgah" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Discription" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Ins_Date" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'phasco.com_Article.dbo.Tractate_UserName_Pass' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tractate_UserName_Pass">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Uid" Type="nvarchar" MaxLength="20" />
+          <Property Name="Pass" Type="nvarchar" MaxLength="20" />
+          <Property Name="_Mode" Type="char" MaxLength="10" />
+          <Property Name="Active" Type="char" MaxLength="3" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'phasco.com_Article.dbo.Web_Site_VisitControl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Web_Site_VisitControl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="DateEN" Type="datetime" />
+          <Property Name="Url" Type="nvarchar" MaxLength="50" />
+          <Property Name="FarsiDay" Type="int" />
+          <Property Name="FarsiMonth" Type="int" />
+          <Property Name="FarsiYears" Type="int" />
+          <Property Name="Times" Type="datetime" />
+          <Property Name="TimeMode" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="phascocom_ArticleModelStoreContainer">
+          <EntitySet Name="alluserlogin" EntityType="Self.alluserlogin" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[alluserlogin].[username] AS [username], 
+[alluserlogin].[passname] AS [passname], 
+[alluserlogin].[permission] AS [permission], 
+[alluserlogin].[Id] AS [Id], 
+[alluserlogin].[GroupAdmin] AS [GroupAdmin], 
+[alluserlogin].[siteAdmin] AS [siteAdmin], 
+[alluserlogin].[EntryAdmin] AS [EntryAdmin], 
+[alluserlogin].[Types] AS [Types]
+FROM [dbo].[alluserlogin] AS [alluserlogin]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="T_Atlas" EntityType="Self.T_Atlas" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[T_Atlas].[ID] AS [ID], 
+[T_Atlas].[SubId] AS [SubId], 
+[T_Atlas].[Title] AS [Title], 
+[T_Atlas].[Comment] AS [Comment], 
+[T_Atlas].[Date_Ins] AS [Date_Ins], 
+[T_Atlas].[Visit] AS [Visit]
+FROM [dbo].[T_Atlas] AS [T_Atlas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="T_Atlas_Comment" EntityType="Self.T_Atlas_Comment" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[T_Atlas_Comment].[ID] AS [ID], 
+[T_Atlas_Comment].[AtlasID] AS [AtlasID], 
+[T_Atlas_Comment].[Uid] AS [Uid], 
+[T_Atlas_Comment].[Comment] AS [Comment], 
+[T_Atlas_Comment].[dateins] AS [dateins], 
+[T_Atlas_Comment].[UserScore] AS [UserScore]
+FROM [dbo].[T_Atlas_Comment] AS [T_Atlas_Comment]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="T_Atlas_Comment_UserScore" EntityType="Self.T_Atlas_Comment_UserScore" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[T_Atlas_Comment_UserScore].[CommentId] AS [CommentId], 
+[T_Atlas_Comment_UserScore].[Status] AS [Status], 
+[T_Atlas_Comment_UserScore].[UID] AS [UID]
+FROM [dbo].[T_Atlas_Comment_UserScore] AS [T_Atlas_Comment_UserScore]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="T_Atlas_Group" EntityType="Self.T_Atlas_Group" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[T_Atlas_Group].[id] AS [id], 
+[T_Atlas_Group].[Title] AS [Title], 
+[T_Atlas_Group].[Visitcount] AS [Visitcount]
+FROM [dbo].[T_Atlas_Group] AS [T_Atlas_Group]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TasbitVisitControl" EntityType="Self.TasbitVisitControl" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[TasbitVisitControl].[Id] AS [Id], 
+[TasbitVisitControl].[DateEN] AS [DateEN], 
+[TasbitVisitControl].[Url] AS [Url], 
+[TasbitVisitControl].[FarsiDay] AS [FarsiDay], 
+[TasbitVisitControl].[FarsiMonth] AS [FarsiMonth], 
+[TasbitVisitControl].[FarsiYears] AS [FarsiYears], 
+[TasbitVisitControl].[Times] AS [Times], 
+[TasbitVisitControl].[TimeMode] AS [TimeMode]
+FROM [dbo].[TasbitVisitControl] AS [TasbitVisitControl]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tractate_List" EntityType="Self.Tractate_List" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Tractate_List].[Id] AS [Id], 
+[Tractate_List].[SubLevel] AS [SubLevel], 
+[Tractate_List].[SubJect] AS [SubJect], 
+[Tractate_List].[DateEn] AS [DateEn]
+FROM [dbo].[Tractate_List] AS [Tractate_List]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tractate_Message" EntityType="Self.Tractate_Message" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Tractate_Message].[ID] AS [ID], 
+[Tractate_Message].[SubId] AS [SubId], 
+[Tractate_Message].[UserMode] AS [UserMode], 
+[Tractate_Message].[Uid] AS [Uid], 
+[Tractate_Message].[Name] AS [Name], 
+[Tractate_Message].[Famil] AS [Famil], 
+[Tractate_Message].[Tel] AS [Tel], 
+[Tractate_Message].[Email] AS [Email], 
+[Tractate_Message].[UserTitle] AS [UserTitle], 
+[Tractate_Message].[SendText] AS [SendText], 
+[Tractate_Message].[SendDateEn] AS [SendDateEn], 
+[Tractate_Message].[SendDateFa] AS [SendDateFa], 
+[Tractate_Message].[Archive] AS [Archive], 
+[Tractate_Message].[AccessView] AS [AccessView], 
+[Tractate_Message].[ComentId] AS [ComentId], 
+[Tractate_Message].[Title] AS [Title]
+FROM [dbo].[Tractate_Message] AS [Tractate_Message]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tractate_TasbitAnswer" EntityType="Self.Tractate_TasbitAnswer" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Tractate_TasbitAnswer].[Id] AS [Id], 
+[Tractate_TasbitAnswer].[IdAnswer] AS [IdAnswer], 
+[Tractate_TasbitAnswer].[TasbitAnswer] AS [TasbitAnswer], 
+[Tractate_TasbitAnswer].[dATEFA] AS [dATEFA], 
+[Tractate_TasbitAnswer].[dateen] AS [dateen]
+FROM [dbo].[Tractate_TasbitAnswer] AS [Tractate_TasbitAnswer]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tractate_Text" EntityType="Self.Tractate_Text" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Tractate_Text].[Id] AS [Id], 
+[Tractate_Text].[SubId] AS [SubId], 
+[Tractate_Text].[UID_ID] AS [UID_ID], 
+[Tractate_Text].[SubJect] AS [SubJect], 
+[Tractate_Text].[Writer] AS [Writer], 
+[Tractate_Text].[Ref] AS [Ref], 
+[Tractate_Text].[ManElm] AS [ManElm], 
+[Tractate_Text].[RefNumber] AS [RefNumber], 
+[Tractate_Text].[keyWork] AS [keyWork], 
+[Tractate_Text].[keyWorkOtherLan] AS [keyWorkOtherLan], 
+[Tractate_Text].[ShortText] AS [ShortText], 
+[Tractate_Text].[ShortTextOtherLan] AS [ShortTextOtherLan], 
+[Tractate_Text].[Translator] AS [Translator], 
+[Tractate_Text].[PersianSource] AS [PersianSource], 
+[Tractate_Text].[EnglishSource] AS [EnglishSource], 
+[Tractate_Text].[Text] AS [Text], 
+[Tractate_Text].[DateIns] AS [DateIns], 
+[Tractate_Text].[Active] AS [Active], 
+[Tractate_Text].[ClickNumber] AS [ClickNumber], 
+[Tractate_Text].[title_Offer] AS [title_Offer], 
+[Tractate_Text].[SubTitle_Offer] AS [SubTitle_Offer], 
+[Tractate_Text].[Offer] AS [Offer]
+FROM [dbo].[Tractate_Text] AS [Tractate_Text]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tractate_User_Properties" EntityType="Self.Tractate_User_Properties" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Tractate_User_Properties].[Id] AS [Id], 
+[Tractate_User_Properties].[AutoId] AS [AutoId], 
+[Tractate_User_Properties].[Name] AS [Name], 
+[Tractate_User_Properties].[Famil] AS [Famil], 
+[Tractate_User_Properties].[Tahsilat] AS [Tahsilat], 
+[Tractate_User_Properties].[Reshte] AS [Reshte], 
+[Tractate_User_Properties].[Rotbeye_elmi] AS [Rotbeye_elmi], 
+[Tractate_User_Properties].[Daneshgah] AS [Daneshgah], 
+[Tractate_User_Properties].[Email] AS [Email], 
+[Tractate_User_Properties].[Tel] AS [Tel], 
+[Tractate_User_Properties].[Discription] AS [Discription], 
+[Tractate_User_Properties].[Ins_Date] AS [Ins_Date]
+FROM [dbo].[Tractate_User_Properties] AS [Tractate_User_Properties]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tractate_UserName_Pass" EntityType="Self.Tractate_UserName_Pass" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Tractate_UserName_Pass].[Id] AS [Id], 
+[Tractate_UserName_Pass].[Uid] AS [Uid], 
+[Tractate_UserName_Pass].[Pass] AS [Pass], 
+[Tractate_UserName_Pass].[_Mode] AS [_Mode], 
+[Tractate_UserName_Pass].[Active] AS [Active]
+FROM [dbo].[Tractate_UserName_Pass] AS [Tractate_UserName_Pass]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Web_Site_VisitControl" EntityType="Self.Web_Site_VisitControl" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Web_Site_VisitControl].[Id] AS [Id], 
+[Web_Site_VisitControl].[DateEN] AS [DateEN], 
+[Web_Site_VisitControl].[Url] AS [Url], 
+[Web_Site_VisitControl].[FarsiDay] AS [FarsiDay], 
+[Web_Site_VisitControl].[FarsiMonth] AS [FarsiMonth], 
+[Web_Site_VisitControl].[FarsiYears] AS [FarsiYears], 
+[Web_Site_VisitControl].[Times] AS [Times], 
+[Web_Site_VisitControl].[TimeMode] AS [TimeMode]
+FROM [dbo].[Web_Site_VisitControl] AS [Web_Site_VisitControl]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="phasco.com_ArticleModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityType Name="alluserlogin">
+          <Key>
+            <PropertyRef Name="username" />
+            <PropertyRef Name="permission" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="passname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="permission" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="GroupAdmin" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+          <Property Name="siteAdmin" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+          <Property Name="EntryAdmin" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+          <Property Name="Types" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_Atlas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubId" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Date_Ins" Type="DateTime" Precision="3" />
+          <Property Name="Visit" Type="Int32" />
+        </EntityType>
+        <EntityType Name="T_Atlas_Comment">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="AtlasID" />
+            <PropertyRef Name="Uid" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AtlasID" Type="Int32" Nullable="false" />
+          <Property Name="Uid" Type="Int32" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="dateins" Type="DateTime" Precision="3" />
+          <Property Name="UserScore" Type="Int32" />
+        </EntityType>
+        <EntityType Name="T_Atlas_Comment_UserScore">
+          <Key>
+            <PropertyRef Name="CommentId" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="CommentId" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="UID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Atlas_Group">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Visitcount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TasbitVisitControl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="DateEN" Type="DateTime" Precision="3" />
+          <Property Name="Url" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="FarsiDay" Type="Int32" />
+          <Property Name="FarsiMonth" Type="Int32" />
+          <Property Name="FarsiYears" Type="Int32" />
+          <Property Name="Times" Type="Int32" />
+          <Property Name="TimeMode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tractate_List">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubLevel" Type="Int32" />
+          <Property Name="SubJect" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateEn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Tractate_Message">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ComentId" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubId" Type="Int32" />
+          <Property Name="UserMode" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="Uid" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Famil" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+          <Property Name="UserTitle" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="SendText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SendDateEn" Type="DateTime" Precision="3" />
+          <Property Name="SendDateFa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Archive" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="AccessView" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="ComentId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tractate_TasbitAnswer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAnswer" Type="Int32" />
+          <Property Name="TasbitAnswer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dATEFA" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="dateen" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Tractate_Text">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubId" Type="Int32" />
+          <Property Name="UID_ID" Type="Int32" />
+          <Property Name="SubJect" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Writer" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Ref" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ManElm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RefNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="keyWork" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="keyWorkOtherLan" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="ShortText" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="ShortTextOtherLan" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="Translator" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PersianSource" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="EnglishSource" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateIns" Type="DateTime" Precision="3" />
+          <Property Name="Active" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="ClickNumber" Type="Int32" />
+          <Property Name="title_Offer" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle_Offer" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Offer" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tractate_User_Properties">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="Id" Type="Int32" />
+          <Property Name="AutoId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Famil" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Tahsilat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Reshte" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Rotbeye_elmi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Daneshgah" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Discription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Ins_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Tractate_UserName_Pass">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Uid" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Pass" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="C_Mode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Active" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Web_Site_VisitControl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="DateEN" Type="DateTime" Precision="3" />
+          <Property Name="Url" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FarsiDay" Type="Int32" />
+          <Property Name="FarsiMonth" Type="Int32" />
+          <Property Name="FarsiYears" Type="Int32" />
+          <Property Name="Times" Type="DateTime" Precision="3" />
+          <Property Name="TimeMode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ArticlesEntities">
+          <EntitySet Name="alluserlogins" EntityType="Self.alluserlogin" />
+          <EntitySet Name="T_Atlas" EntityType="Self.T_Atlas" />
+          <EntitySet Name="T_Atlas_Comment" EntityType="Self.T_Atlas_Comment" />
+          <EntitySet Name="T_Atlas_Comment_UserScore" EntityType="Self.T_Atlas_Comment_UserScore" />
+          <EntitySet Name="T_Atlas_Group" EntityType="Self.T_Atlas_Group" />
+          <EntitySet Name="TasbitVisitControls" EntityType="Self.TasbitVisitControl" />
+          <EntitySet Name="Tractate_List" EntityType="Self.Tractate_List" />
+          <EntitySet Name="Tractate_Message" EntityType="Self.Tractate_Message" />
+          <EntitySet Name="Tractate_TasbitAnswer" EntityType="Self.Tractate_TasbitAnswer" />
+          <EntitySet Name="Tractate_Text" EntityType="Self.Tractate_Text" />
+          <EntitySet Name="Tractate_User_Properties" EntityType="Self.Tractate_User_Properties" />
+          <EntitySet Name="Tractate_UserName_Pass" EntityType="Self.Tractate_UserName_Pass" />
+          <EntitySet Name="Web_Site_VisitControl" EntityType="Self.Web_Site_VisitControl" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="phascocom_ArticleModelStoreContainer" CdmEntityContainer="ArticlesEntities">
+          <EntitySetMapping Name="alluserlogins">
+            <EntityTypeMapping TypeName="phasco.com_ArticleModel.alluserlogin">
+              <MappingFragment StoreEntitySet="alluserlogin">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="passname" ColumnName="passname" />
+                <ScalarProperty Name="permission" ColumnName="permission" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GroupAdmin" ColumnName="GroupAdmin" />
+                <ScalarProperty Name="siteAdmin" ColumnName="siteAdmin" />
+                <ScalarProperty Name="EntryAdmin" ColumnName="EntryAdmin" />
+                <ScalarProperty Name="Types" ColumnName="Types" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Atlas">
+            <EntityTypeMapping TypeName="phasco.com_ArticleModel.T_Atlas">
+              <MappingFragment StoreEntitySet="T_Atlas">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SubId" ColumnName="SubId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Date_Ins" ColumnName="Date_Ins" />
+                <ScalarProperty Name="Visit" ColumnName="Visit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Atlas_Comment">
+            <EntityTypeMapping TypeName="phasco.com_ArticleModel.T_Atlas_Comment">
+              <MappingFragment StoreEntitySet="T_Atlas_Comment">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AtlasID" ColumnName="AtlasID" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="dateins" ColumnName="dateins" />
+                <ScalarProperty Name="UserScore" ColumnName="UserScore" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Atlas_Comment_UserScore">
+            <EntityTypeMapping TypeName="phasco.com_ArticleModel.T_Atlas_Comment_UserScore">
+              <MappingFragment StoreEntitySet="T_Atlas_Comment_UserScore">
+                <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Atlas_Group">
+            <EntityTypeMapping TypeName="phasco.com_ArticleModel.T_Atlas_Group">
+              <MappingFragment StoreEntitySet="T_Atlas_Group">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Visitcount" ColumnName="Visitcount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TasbitVisitControls">
+            <EntityTypeMapping TypeName="phasco.com_ArticleModel.TasbitVisitControl">
+              <MappingFragment StoreEntitySet="TasbitVisitControl">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DateEN" ColumnName="DateEN" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="FarsiDay" ColumnName="FarsiDay" />
+                <ScalarProperty Name="FarsiMonth" ColumnName="FarsiMonth" />
+                <ScalarProperty Name="FarsiYears" ColumnName="FarsiYears" />
+                <ScalarProperty Name="Times" ColumnName="Times" />
+                <ScalarProperty Name="TimeMode" ColumnName="TimeMode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tractate_List">
+            <EntityTypeMapping TypeName="phasco.com_ArticleModel.Tractate_List">
+              <MappingFragment StoreEntitySet="Tractate_List">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SubLevel" ColumnName="SubLevel" />
+                <ScalarProperty Name="SubJect" ColumnName="SubJect" />
+                <ScalarProperty Name="DateEn" ColumnName="DateEn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tractate_Message">
+            <EntityTypeMapping TypeName="phasco.com_ArticleModel.Tractate_Message">
+              <MappingFragment StoreEntitySet="Tractate_Message">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SubId" ColumnName="SubId" />
+                <ScalarProperty Name="UserMode" ColumnName="UserMode" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Famil" ColumnName="Famil" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserTitle" ColumnName="UserTitle" />
+                <ScalarProperty Name="SendText" ColumnName="SendText" />
+                <ScalarProperty Name="SendDateEn" ColumnName="SendDateEn" />
+                <ScalarProperty Name="SendDateFa" ColumnName="SendDateFa" />
+                <ScalarProperty Name="Archive" ColumnName="Archive" />
+                <ScalarProperty Name="AccessView" ColumnName="AccessView" />
+                <ScalarProperty Name="ComentId" ColumnName="ComentId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tractate_TasbitAnswer">
+            <EntityTypeMapping TypeName="phasco.com_ArticleModel.Tractate_TasbitAnswer">
+              <MappingFragment StoreEntitySet="Tractate_TasbitAnswer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdAnswer" ColumnName="IdAnswer" />
+                <ScalarProperty Name="TasbitAnswer" ColumnName="TasbitAnswer" />
+                <ScalarProperty Name="dATEFA" ColumnName="dATEFA" />
+                <ScalarProperty Name="dateen" ColumnName="dateen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tractate_Text">
+            <EntityTypeMapping TypeName="phasco.com_ArticleModel.Tractate_Text">
+              <MappingFragment StoreEntitySet="Tractate_Text">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SubId" ColumnName="SubId" />
+                <ScalarProperty Name="UID_ID" ColumnName="UID_ID" />
+                <ScalarProperty Name="SubJect" ColumnName="SubJect" />
+                <ScalarProperty Name="Writer" ColumnName="Writer" />
+                <ScalarProperty Name="Ref" ColumnName="Ref" />
+                <ScalarProperty Name="ManElm" ColumnName="ManElm" />
+                <ScalarProperty Name="RefNumber" ColumnName="RefNumber" />
+                <ScalarProperty Name="keyWork" ColumnName="keyWork" />
+                <ScalarProperty Name="keyWorkOtherLan" ColumnName="keyWorkOtherLan" />
+                <ScalarProperty Name="ShortText" ColumnName="ShortText" />
+                <ScalarProperty Name="ShortTextOtherLan" ColumnName="ShortTextOtherLan" />
+                <ScalarProperty Name="Translator" ColumnName="Translator" />
+                <ScalarProperty Name="PersianSource" ColumnName="PersianSource" />
+                <ScalarProperty Name="EnglishSource" ColumnName="EnglishSource" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="DateIns" ColumnName="DateIns" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="ClickNumber" ColumnName="ClickNumber" />
+                <ScalarProperty Name="title_Offer" ColumnName="title_Offer" />
+                <ScalarProperty Name="SubTitle_Offer" ColumnName="SubTitle_Offer" />
+                <ScalarProperty Name="Offer" ColumnName="Offer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tractate_User_Properties">
+            <EntityTypeMapping TypeName="phasco.com_ArticleModel.Tractate_User_Properties">
+              <MappingFragment StoreEntitySet="Tractate_User_Properties">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Famil" ColumnName="Famil" />
+                <ScalarProperty Name="Tahsilat" ColumnName="Tahsilat" />
+                <ScalarProperty Name="Reshte" ColumnName="Reshte" />
+                <ScalarProperty Name="Rotbeye_elmi" ColumnName="Rotbeye_elmi" />
+                <ScalarProperty Name="Daneshgah" ColumnName="Daneshgah" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Discription" ColumnName="Discription" />
+                <ScalarProperty Name="Ins_Date" ColumnName="Ins_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tractate_UserName_Pass">
+            <EntityTypeMapping TypeName="phasco.com_ArticleModel.Tractate_UserName_Pass">
+              <MappingFragment StoreEntitySet="Tractate_UserName_Pass">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="C_Mode" ColumnName="_Mode" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Web_Site_VisitControl">
+            <EntityTypeMapping TypeName="phasco.com_ArticleModel.Web_Site_VisitControl">
+              <MappingFragment StoreEntitySet="Web_Site_VisitControl">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DateEN" ColumnName="DateEN" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="FarsiDay" ColumnName="FarsiDay" />
+                <ScalarProperty Name="FarsiMonth" ColumnName="FarsiMonth" />
+                <ScalarProperty Name="FarsiYears" ColumnName="FarsiYears" />
+                <ScalarProperty Name="Times" ColumnName="Times" />
+                <ScalarProperty Name="TimeMode" ColumnName="TimeMode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

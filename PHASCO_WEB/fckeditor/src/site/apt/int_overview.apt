@@ -1,0 +1,39 @@
+~~ FCKeditor - The text editor for Internet - http://www.fckeditor.net
+~~ Copyright (C) 2004-2010 Frederico Caldeira Knabben
+~~
+~~ == BEGIN LICENSE ==
+~~
+~~ Licensed under the terms of any of the following licenses at your
+~~ choice:
+~~
+~~  - GNU General Public License Version 2 or later (the "GPL")
+~~    http://www.gnu.org/licenses/gpl.html
+~~
+~~  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+~~    http://www.gnu.org/licenses/lgpl.html
+~~
+~~  - Mozilla Public License Version 1.1 or later (the "MPL")
+~~    http://www.mozilla.org/MPL/MPL-1.1.html
+~~
+~~ == END LICENSE ==
+~~ @version $Id: int_overview.apt 4785 2009-12-21 20:10:28Z mosipov $
+				--------------------------
+					Integration Overview
+				--------------------------
+
+Overview
+
+  The Java integration can be integrated in several systems and frameworks:
+
+  * <<JSP tag library>>: Easy integration of the FCKeditor in your JSPs.
+
+  * <<Connector Servlet>>: A servlet to manage resources like images, documents,
+    and other files.
+
+  * <<Velocity/FreeMarker>>: This library is suitable to be integrated into a
+    template engine.
+
+  []
+
+  Please read the integration parts carefully if you intend to deploy the FCKeditor
+  in a particular system!

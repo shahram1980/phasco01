@@ -1,0 +1,1544 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>سایت جامع علوم آزمایشگاهی و پزشکی فاسکو </title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+
+        function GetUserAnswer() {
+            var questioncount = $('.question tr td').length;
+            //alert($('.question tr td')[12].getElementsByTagName('span')[0].innerHTML); //.innerHTML);
+            var QuestionUserAnswer = '';
+            for (var i = 0; i < questioncount; i++) {
+                if (i % 6 == 0) {
+                    var questionID = $('.question tr td')[i].getElementsByTagName('span')[0].innerHTML;
+                }
+                if (i % 6 == 1) {
+                    var answer = 0;
+                    if ($('.question tr td')[i].getElementsByTagName('td')[0].getElementsByTagName('input')[0].checked)
+                        answer = 1;
+                    if ($('.question tr td')[i].getElementsByTagName('td')[1].getElementsByTagName('input')[0].checked)
+                        answer = 2;
+                    if ($('.question tr td')[i].getElementsByTagName('td')[2].getElementsByTagName('input')[0].checked)
+                        answer = 3;
+                    if ($('.question tr td')[i].getElementsByTagName('td')[3].getElementsByTagName('input')[0].checked)
+                        answer = 4;
+                }
+                if (i % 6 == 5) {
+                    QuestionUserAnswer += questionID + ':' + answer + ',';
+                }
+            }
+            QuestionUserAnswer += '0:0';
+            //alert(QuestionUserAnswer);
+        }
+
+    </script>
+</head>
+<body>
+    <div style="width: 800px;" id="DIV_Quiz">
+        <table style="width: 100%; direction: rtl; color: Blue;">
+            <tr>
+                <td>
+                    عنوان آزمون
+                </td>
+                <td>
+                    <span id="ctl00_Plc_Label_QuizTitle">9898989841</span>
+                </td>
+                <td>
+                    زمان پاسخگویی به سوالات
+                </td>
+                <td>
+                    <img id="ctl00_Plc_Image1" src="../Images2/clock.png" style="height: 40px; width: 40px;
+                        border-width: 0px;" />
+                    <span id="ctl00_Plc_Label_second"></span>&nbsp;:&nbsp; <span id="ctl00_Plc_Label_minute">
+                    </span>&nbsp;:&nbsp; <span id="ctl00_Plc_Label_hour"></span>
+                </td>
+            </tr>
+        </table>
+        <hr style="color: Navy;" />
+        <input type="hidden" name="ctl00$Plc$HiddenField_RowNumber" id="ctl00_Plc_HiddenField_RowNumber"
+            value="25" />
+        <table dir="rtl" style="width: 100%; direction: rtl; color: Navy;">
+            <tr>
+                <td style="width: 10%; direction: rtl; vertical-align: top;">
+                    درس
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    بیوشیمی کارشناسی
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    از سوال
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    <span id="ctl00_Plc_Repeater_Lessons_ctl00_Label_StartIndex">1</span>
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    تا سوال
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    <span id="ctl00_Plc_Repeater_Lessons_ctl00_Label_EndIndex">5</span>
+                </td>
+            </tr>
+        </table>
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                1 <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl00_Label_QuestionID"
+                                    class="lblQuestion">126</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                قدرت یک بافر به کدام مورد بستگی دارد؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl00_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl00_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl00_lblSwitchBody1">
+                                                (درجه حرارت محیط</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl00_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl00_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl00_lblSwitchBody2">
+                                                (غلظت یون هیدروکسیل محیط</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl00_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl00_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl00_lblSwitchBody3">
+                                                (غلظت H+ در محیط</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl00_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl00_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl00_lblSwitchBody4">
+                                                (غلظت اجزای سازنده آن</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                2 <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl02_Label_QuestionID"
+                                    class="lblQuestion">211</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                کدام اسید آمینه آروماتیک می باشد؟<br />
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl02_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl02_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl02_lblSwitchBody1">
+                                                (Glutamine<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl02_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl02_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl02_lblSwitchBody2">
+                                                (Leucine<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl02_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl02_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl02_lblSwitchBody3">
+                                                (Tyrosine<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl02_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl02_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl02_lblSwitchBody4">
+                                                (Histidine<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                3 <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl04_Label_QuestionID"
+                                    class="lblQuestion">316</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                درساختمان کدام اسید آمینه عامل هیدروکسیل وجود داره ؟<br />
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl04_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl04_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl04_lblSwitchBody1">
+                                                (آرژنین<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl04_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl04_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl04_lblSwitchBody2">
+                                                (ترئونین<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl04_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl04_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl04_lblSwitchBody3">
+                                                (ایزولوسین<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl04_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl04_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl04_lblSwitchBody4">
+                                                (متیونین<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                4 <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl06_Label_QuestionID"
+                                    class="lblQuestion">325</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                تعداد کربن های نامتقارن یک مولکول زیستی 5 می باشد .تعداد ایزومرهای نوری این مولکول
+                                چقدر است ؟<br />
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl06_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl06_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl06_lblSwitchBody1">
+                                                (4<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl06_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl06_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl06_lblSwitchBody2">
+                                                (8<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl06_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl06_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl06_lblSwitchBody3">
+                                                (16<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl06_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl06_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl06_lblSwitchBody4">
+                                                (32<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                5 <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl08_Label_QuestionID"
+                                    class="lblQuestion">624</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                همه آزمایشات درارزیابی کم خونی کاربرد دارند ،بجز:<br />
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl08_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl08_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl08_lblSwitchBody1">
+                                                (اندازه گیری فریتین<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl08_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl08_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl08_lblSwitchBody2">
+                                                (اندازه گیری سرولوپلاسمین<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl08_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl08_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl08_lblSwitchBody3">
+                                                (اندازه گیری TIBC<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl08_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl00$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl08_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl00_Repeater_questions_ctl08_lblSwitchBody4">
+                                                (اندازه گیری ترانسفرین<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div style="width: 100%; background-color: Maroon; height: 3px;">
+        </div>
+        <table dir="rtl" style="width: 100%; direction: rtl; color: Navy;">
+            <tr>
+                <td style="width: 10%; direction: rtl; vertical-align: top;">
+                    درس
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    ایمونولوژی کارشناسی
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    از سوال
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    <span id="ctl00_Plc_Repeater_Lessons_ctl02_Label_StartIndex">6</span>
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    تا سوال
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    <span id="ctl00_Plc_Repeater_Lessons_ctl02_Label_EndIndex">10</span>
+                </td>
+            </tr>
+        </table>
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                6 <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl00_Label_QuestionID"
+                                    class="lblQuestion">307</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                به بخش هایی از مولکول آنتی ژن که به طور اختصاصی با آنتی بادی واکنش می دهد چه&nbsp;می
+                                گویند؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl00_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl00_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl00_lblSwitchBody1">
+                                                (اپی توپ</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl00_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl00_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl00_lblSwitchBody2">
+                                                (پاراتوپ</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl00_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl00_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl00_lblSwitchBody3">
+                                                (فاگوزوم</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl00_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl00_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl00_lblSwitchBody4">
+                                                (گروه های اسید آمینه</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                7 <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl02_Label_QuestionID"
+                                    class="lblQuestion">528</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                کدام یک از ترکیبات زیر خصوصیت ایمنی زایی بیشتری دارد؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl02_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl02_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl02_lblSwitchBody1">
+                                                (نوکلئوزید ها</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl02_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl02_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl02_lblSwitchBody2">
+                                                (لیپو پلی ساکارید ها</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl02_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl02_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl02_lblSwitchBody3">
+                                                (کربوهیدرات ها</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl02_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl02_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl02_lblSwitchBody4">
+                                                (پلی پپتید ها</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                8 <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl04_Label_QuestionID"
+                                    class="lblQuestion">633</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                آنتی ژنهای ویروس :
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl04_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl04_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl04_lblSwitchBody1">
+                                                (در کنار مولکول I&nbsp;و توسط سلولهای T8&nbsp;شناسایی می گردند</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl04_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl04_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl04_lblSwitchBody2">
+                                                (در کنار مولکول II و توسط سلولهای T8 شناسایی می گردند</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl04_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl04_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl04_lblSwitchBody3">
+                                                (در کنار مولکول کلاس III و توسط سلول های T4 شناسایی می گردند</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl04_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl04_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl04_lblSwitchBody4">
+                                                (در کنار مولکول کلاس I و توسط سلول های T4 شناسایی می گردند</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                9 <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl06_Label_QuestionID"
+                                    class="lblQuestion">662</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                کدام یک از سلول های زیر دارای هر دو کلاس HLA - I و HLA - II&nbsp;هستند؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl06_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl06_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl06_lblSwitchBody1">
+                                                (ماکروفاژها</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl06_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl06_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl06_lblSwitchBody2">
+                                                (گلبول های قرمز</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl06_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl06_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl06_lblSwitchBody3">
+                                                (نوتروفیل ها</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl06_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl06_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl06_lblSwitchBody4">
+                                                (پلاکت ها</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                10 <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl08_Label_QuestionID"
+                                    class="lblQuestion">1095</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                برای پاسخ ایمنی هومورال علیه هاپتن ها (برخی داروها) شرکت کدام یک از سلول های زیر
+                                الزامی است؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl08_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl08_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl08_lblSwitchBody1">
+                                                (سلول های عرضه کننده آنتی ژن</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl08_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl08_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl08_lblSwitchBody2">
+                                                (T cell</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl08_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl08_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl08_lblSwitchBody3">
+                                                (B cell</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl08_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl02$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl08_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl02_Repeater_questions_ctl08_lblSwitchBody4">
+                                                (هر سه سلول فوق</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div style="width: 100%; background-color: Maroon; height: 3px;">
+        </div>
+        <table dir="rtl" style="width: 100%; direction: rtl; color: Navy;">
+            <tr>
+                <td style="width: 10%; direction: rtl; vertical-align: top;">
+                    درس
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    باکتری شناسی کارشناسی
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    از سوال
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    <span id="ctl00_Plc_Repeater_Lessons_ctl04_Label_StartIndex">11</span>
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    تا سوال
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    <span id="ctl00_Plc_Repeater_Lessons_ctl04_Label_EndIndex">15</span>
+                </td>
+            </tr>
+        </table>
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                11 <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl00_Label_QuestionID"
+                                    class="lblQuestion">231</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                در باکتری شناسی بالینی تکنیک شمارش تعداد باکتری ها در نمونه های ادراری برای اولین
+                                بار در سال 1956 به وسیله کدام یک از دانشمندان زیر معرفی شد؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl00_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl00_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl00_lblSwitchBody1">
+                                                (Kass&nbsp;و همکاران</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl00_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl00_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl00_lblSwitchBody2">
+                                                (houston</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl00_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl00_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl00_lblSwitchBody3">
+                                                (Greenwood and yule</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl00_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl00_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl00_lblSwitchBody4">
+                                                (butzler و همکاران</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                12 <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl02_Label_QuestionID"
+                                    class="lblQuestion">246</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                کدام یک از ارگانلهای داخل سیتوپلاسمی زیر خاص سلولهای پروکاریوتیک می باشد؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl02_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl02_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl02_lblSwitchBody1">
+                                                (غشای هسته</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl02_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl02_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl02_lblSwitchBody2">
+                                                (گرانولهای ذخیره ای</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl02_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl02_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl02_lblSwitchBody3">
+                                                (شبکه &nbsp;رتیکو لو اندوپلاسمیک</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl02_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl02_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl02_lblSwitchBody4">
+                                                (دستگاه گلژی</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                13 <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl04_Label_QuestionID"
+                                    class="lblQuestion">424</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                جهت مشاهده بهتر اندوسپور ( اسپور ) باکتری ها از کدام روش استفاده می شود؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl04_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl04_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl04_lblSwitchBody1">
+                                                (ذیل نیلسون</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl04_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl04_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl04_lblSwitchBody2">
+                                                (فونتانا</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl04_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl04_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl04_lblSwitchBody3">
+                                                (فولگن</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl04_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl04_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl04_lblSwitchBody4">
+                                                (مولر</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                14 <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl06_Label_QuestionID"
+                                    class="lblQuestion">427</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                رنگ زمینه (counter stain)&nbsp;در رنگ آمیزی ذیل - نلسون کدام رنگ است؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl06_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl06_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl06_lblSwitchBody1">
+                                                (متیلن بلو</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl06_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl06_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl06_lblSwitchBody2">
+                                                (کریستال ویوله</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl06_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl06_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl06_lblSwitchBody3">
+                                                (سافرانین</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl06_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl06_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl06_lblSwitchBody4">
+                                                (ائوزین</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                15 <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl08_Label_QuestionID"
+                                    class="lblQuestion">476</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                تمام گزینه های زیر جزء فعالیت های بیولوژیک اندوتوکسین باکتریهای گرم منفی به شمار
+                                می روند بجز:
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl08_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl08_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl08_lblSwitchBody1">
+                                                (تولید کاشکتین (TNF)</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl08_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl08_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl08_lblSwitchBody2">
+                                                (کاهش فشار خون و بروز شوک</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl08_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl08_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl08_lblSwitchBody3">
+                                                (تحریک واکنش جلدی شوارتزمن</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl08_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl04$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl08_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl04_Repeater_questions_ctl08_lblSwitchBody4">
+                                                (کاهش دمای بدن</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div style="width: 100%; background-color: Maroon; height: 3px;">
+        </div>
+        <table dir="rtl" style="width: 100%; direction: rtl; color: Navy;">
+            <tr>
+                <td style="width: 10%; direction: rtl; vertical-align: top;">
+                    درس
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    ویروس شناسی کارشناسی
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    از سوال
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    <span id="ctl00_Plc_Repeater_Lessons_ctl06_Label_StartIndex">16</span>
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    تا سوال
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    <span id="ctl00_Plc_Repeater_Lessons_ctl06_Label_EndIndex">20</span>
+                </td>
+            </tr>
+        </table>
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                16 <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl00_Label_QuestionID"
+                                    class="lblQuestion">1378</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                در تهیه واکسن های نوترکیب متداول هپاتیت B&nbsp;کدام بخش از ژنوم ویروس هپاتیت B&nbsp;استفاده
+                                می شود؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl00_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl00_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl00_lblSwitchBody1">
+                                                (C</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl00_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl00_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl00_lblSwitchBody2">
+                                                (P</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl00_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl00_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl00_lblSwitchBody3">
+                                                (X</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl00_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl00_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl00_lblSwitchBody4">
+                                                (S</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                17 <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl02_Label_QuestionID"
+                                    class="lblQuestion">1382</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                در کدام یک از عفونت های زیر ویروس به حالت نهفته در می آید؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl02_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl02_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl02_lblSwitchBody1">
+                                                (آبله</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl02_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl02_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl02_lblSwitchBody2">
+                                                (فلج اطفال</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl02_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl02_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl02_lblSwitchBody3">
+                                                (روتاویروس</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl02_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl02_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl02_lblSwitchBody4">
+                                                (هرپس تناسلی</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                18 <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl04_Label_QuestionID"
+                                    class="lblQuestion">1544</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                کدام یک از ویروس های زیر تولید Pock در غشاء کوریوآلانتوئیک تخم مرغ جنین دار می کند؟<br />
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl04_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl04_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl04_lblSwitchBody1">
+                                                (پاروو<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl04_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl04_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl04_lblSwitchBody2">
+                                                (هاری<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl04_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl04_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl04_lblSwitchBody3">
+                                                (آبله<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl04_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl04_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl04_lblSwitchBody4">
+                                                (آدنو<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                19 <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl06_Label_QuestionID"
+                                    class="lblQuestion">1582</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                کدام یک از ویروس های زیر از طریق دستگاه تناسلی انتقال می یابد؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl06_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl06_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl06_lblSwitchBody1">
+                                                (ویروس پاپیلوما</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl06_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl06_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl06_lblSwitchBody2">
+                                                (ویروس پولیو</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl06_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl06_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl06_lblSwitchBody3">
+                                                (ویروس اوریون</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl06_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl06_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl06_lblSwitchBody4">
+                                                (ویروس سرخک</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                20 <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl08_Label_QuestionID"
+                                    class="lblQuestion">1625</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                کدامیک از ویروس های زیر عامل التهاب شبکیه (رتینیت) می باشد؟<br />
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl08_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl08_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl08_lblSwitchBody1">
+                                                (CMV<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl08_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl08_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl08_lblSwitchBody2">
+                                                (آدنو<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl08_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl08_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl08_lblSwitchBody3">
+                                                (کوکساکی<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl08_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl06$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl08_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl06_Repeater_questions_ctl08_lblSwitchBody4">
+                                                (HHB<br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div style="width: 100%; background-color: Maroon; height: 3px;">
+        </div>
+        <table dir="rtl" style="width: 100%; direction: rtl; color: Navy;">
+            <tr>
+                <td style="width: 10%; direction: rtl; vertical-align: top;">
+                    درس
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    انگل شناسی کارشناسی
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    از سوال
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    <span id="ctl00_Plc_Repeater_Lessons_ctl08_Label_StartIndex">21</span>
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    تا سوال
+                </td>
+                <td style="width: 18%; direction: rtl;">
+                    <span id="ctl00_Plc_Repeater_Lessons_ctl08_Label_EndIndex">25</span>
+                </td>
+            </tr>
+        </table>
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                21 <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl00_Label_QuestionID"
+                                    class="lblQuestion">1690</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                غشا حقیقی در کدام یک از تک یاخته های زیر وجود ندارد؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl00_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl00_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl00_lblSwitchBody1">
+                                                (ژیاردیا</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl00_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl00_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl00_lblSwitchBody2">
+                                                (کیلوماستیکس</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl00_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl00_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl00_lblSwitchBody3">
+                                                (بالانتیدیوم</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl00_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl00$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl00_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl00_lblSwitchBody4">
+                                                (انتاموبا</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                22 <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl02_Label_QuestionID"
+                                    class="lblQuestion">1703</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                انتقال کدام یک از بیماری های زیر در مناطق سردسیر انجام نمی گیرد؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl02_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl02_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl02_lblSwitchBody1">
+                                                (مالاریا</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl02_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl02_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl02_lblSwitchBody2">
+                                                (توکسوپلاسموز</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl02_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl02_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl02_lblSwitchBody3">
+                                                (آمیبیاز</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl02_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl02$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl02_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl02_lblSwitchBody4">
+                                                (ژیاردیوز</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                23 <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl04_Label_QuestionID"
+                                    class="lblQuestion">1707</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                علت اصلی مرگ ومیر در مبتلایان به مالاریای فالسیپاروم کدام است؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl04_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl04_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl04_lblSwitchBody1">
+                                                (کم خونی در اثر از بین رفتن گلبولهای قرمز انگل دار</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl04_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl04_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl04_lblSwitchBody2">
+                                                (چسبیدن اشکال شیزوگونی خونی به جدار عروق و انسداد مویرگهای مغزی</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl04_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl04_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl04_lblSwitchBody3">
+                                                (مسمومیت شدید در اثر توکسین انگل</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl04_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl04$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl04_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl04_lblSwitchBody4">
+                                                (نارسایی و ایست قلبی</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                24 <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl06_Label_QuestionID"
+                                    class="lblQuestion">1769</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                اشکال تاژکدار در کشت کدام یک از تک یاخته های زیر دیده می شود؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl06_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl06_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl06_lblSwitchBody1">
+                                                (لیشمانیا دونووانی</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl06_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl06_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl06_lblSwitchBody2">
+                                                (بالانتیدیوم کلی</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl06_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl06_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl06_lblSwitchBody3">
+                                                (انتاموبا هیستولیتیکا</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl06_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl06$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl06_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl06_lblSwitchBody4">
+                                                (پلاسمودیوم فالسیپاروم</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr />
+                    <table dir="rtl" style="width: 100%; direction: rtl;" class="question">
+                        <tr>
+                            <td style="width: 10%; direction: rtl; vertical-align: top;">
+                                25 <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl08_Label_QuestionID"
+                                    class="lblQuestion">1785</span>
+                            </td>
+                            <td style="width: 90%; direction: rtl;">
+                                مخزن انگل تریپانوزوما رودزینس کدام یک از حیوانات زیر است؟
+                                <br />
+                                <br />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl08_RadioButton_SwitchBody1"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody1" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl08_RadioButton_SwitchBody1">1</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl08_lblSwitchBody1">
+                                                (Antelope</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl08_RadioButton_SwitchBody2"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody2" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl08_RadioButton_SwitchBody2">2</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl08_lblSwitchBody2">
+                                                (Armadillo</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl08_RadioButton_SwitchBody3"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody3" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl08_RadioButton_SwitchBody3">3</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl08_lblSwitchBody3">
+                                                (Rat</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%; text-align: right; direction: rtl;">
+                                            <input id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl08_RadioButton_SwitchBody4"
+                                                type="radio" name="ctl00$Plc$Repeater_Lessons$ctl08$Repeater_questions$ctl08$switch"
+                                                value="RadioButton_SwitchBody4" /><label for="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl08_RadioButton_SwitchBody4">4</label>
+                                            <span id="ctl00_Plc_Repeater_Lessons_ctl08_Repeater_questions_ctl08_lblSwitchBody4">
+                                                (Felidae</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="width: 100%; text-align: center; padding: 20 0 20 0;">
+        <input type="submit" name="ctl00$Plc$Button_submit" value="ارسال پاسخ ها" id="ctl00_Plc_Button_submit" disabled="disabled" 
+            onclick="GetUserAnswer();" />
+        <br />
+        <br />
+    </div>
+</body>

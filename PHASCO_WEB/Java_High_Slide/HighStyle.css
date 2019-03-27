@@ -1,0 +1,54 @@
+.highslide {
+	CURSOR: url(../highslide/graphics/zoomin.cur), pointer; outline: none
+}
+.highslide-active-anchor IMG {
+	VISIBILITY: hidden
+}
+.highslide IMG {
+	BORDER-RIGHT: gray 2px solid; BORDER-TOP: gray 2px solid; BORDER-LEFT: gray 2px solid; BORDER-BOTTOM: gray 2px solid
+}
+.highslide:hover IMG {
+	BORDER-RIGHT: silver 2px solid; BORDER-TOP: silver 2px solid; BORDER-LEFT: silver 2px solid; BORDER-BOTTOM: silver 2px solid
+}
+.highslide-wrapper {
+	BACKGROUND: white
+}
+.highslide-image {
+	BORDER-BOTTOM: white 1px solid
+}
+.highslide-image-blur {
+	
+}
+.highslide-caption {
+	PADDING-RIGHT: 5px; DISPLAY: none; PADDING-LEFT: 5px; FONT-SIZE: 9pt; PADDING-BOTTOM: 5px; DIRECTION: rtl; PADDING-TOP: 5px; BORDER-BOTTOM: white 1px solid; FONT-FAMILY: Tahoma, Helvetica; BACKGROUND-COLOR: #444; TEXT-ALIGN: center; font-color: #fff
+}
+.highslide-loading {
+	BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 2px; BACKGROUND-POSITION: 3px 1px; BORDER-TOP: black 1px solid; DISPLAY: block; PADDING-LEFT: 22px; FONT-WEIGHT: bold; FONT-SIZE: 8pt; BACKGROUND-IMAGE: url(graphics/loader.white.gif); PADDING-BOTTOM: 2px; BORDER-LEFT: black 1px solid; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: black 1px solid; BACKGROUND-REPEAT: no-repeat; FONT-FAMILY: sans-serif; BACKGROUND-COLOR: white; TEXT-DECORATION: none
+}
+A.highslide-credits {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 10px; PADDING-BOTTOM: 2px; COLOR: silver; PADDING-TOP: 2px; TEXT-DECORATION: none
+}
+A.highslide-credits I {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 10px; PADDING-BOTTOM: 2px; COLOR: silver; PADDING-TOP: 2px; TEXT-DECORATION: none
+}
+A.highslide-credits:hover {
+	COLOR: white; BACKGROUND-COLOR: gray
+}
+A.highslide-credits:hover I {
+	COLOR: white; BACKGROUND-COLOR: gray
+}
+A.highslide-full-expand {
+	DISPLAY: block; BACKGROUND: url(graphics/fullexpand.gif) no-repeat; MARGIN: 0px 10px 10px 0px; WIDTH: 34px; HEIGHT: 34px
+}
+.highslide-overlay {
+	DISPLAY: none
+}
+.closebutton {
+	BACKGROUND: none transparent scroll repeat 0% 0%; FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../highslide/graphics/close.png', sizingMethod='scale'); LEFT: 15px; WIDTH: 30px; CURSOR: pointer; POSITION: relative; TOP: -15px; HEIGHT: 30px
+}
+.highslide-display-block {
+	DISPLAY: block
+}
+.highslide-display-none {
+	DISPLAY: none
+}

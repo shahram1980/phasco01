@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="OnlineTest.Admin.Template.admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    <table>
+    <tr>
+    
+    <td style="width:200px;">
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/ManageDegree.aspx">مدیریت مقاطع تحصیلی</asp:HyperLink>
+    </td>
+    
+        <td style="width:200px;">
+        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Admin/ManageField.aspx">مدیریت گروه ها و رشته های مرتبط</asp:HyperLink>
+    </td>
+    
+    
+        <td style="width:200px;">
+        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Admin/ManageLessons.aspx">مدیریت دروس و سوالات</asp:HyperLink>
+    </td>
+    
+            <td style="width:200px;">
+        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Admin/ManageLessonType.aspx">مدیریت نوع دروس</asp:HyperLink>
+    </td>
+    
+
+    
+    </tr>
+    </table>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

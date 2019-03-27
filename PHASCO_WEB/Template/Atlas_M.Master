@@ -1,0 +1,298 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Atlas_M.Master.cs"
+    Inherits="PHASCO_WEB.Template.Atlas_M" %>
+
+<%@ Register Src="../UI/ArticleSubjects.ascx" TagName="ArticleSubjects" TagPrefix="uc7" %>
+<%@ Register Src="UI/TopMenu.ascx" TagName="TopMenu" TagPrefix="uc6" %>
+<%@ Register Src="../UI/Membership.ascx" TagName="Membership" TagPrefix="uc3" %>
+<%@ Register Src="../UI/Vote.ascx" TagName="Vote" TagPrefix="uc2" %>
+<%@ Register Src="../UI/ArticleList.ascx" TagName="ArticleList" TagPrefix="uc4" %>
+<%@ Register Src="../UI/left.ascx" TagName="left" TagPrefix="uc5" %>
+<%@ Register Src="../UI/EmailtoFriends.ascx" TagName="EmailtoFriends" TagPrefix="uc8" %>
+<%@ Register Src="../UI/NewsFlash.ascx" TagName="NewsFlash" TagPrefix="uc9" %>
+<%@ Register Src="../UI/footer.ascx" TagName="footer" TagPrefix="uc10" %>
+<%@ Register Src="UI/googlesearch.ascx" TagName="googlesearch" TagPrefix="uc7" %>
+<!DOCTYPE html>
+<html class="no-js" lang="fa" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="keywords" content="سایت,تخصصی,علوم,آزمایشگاهی,مقالات,داخلی,خارجی,قارچ,ویروس,باکتری,انگل,میکروب,شناسی,سرولوژی, ایمونولوژی, کنترل,کیفی,هماتولوژی,بانک,خون,بیوشیمی,هورمون, بافت,سیتولوژی,پاتولوژی,مایعات,بدن,ژنتیک,بیوتکنولوژی,نانوتکنولوژی,تومورمارکر, آندرولوژی,چکیده,منابع,سم,دارویی,مترجم,کلید,واژه,نویسنده,نویسندگان,مقدمه,مواد,روشها,بحث,نتیجه,references,">
+    <meta name="description" content="سایت تخصصی علوم آزمایشگاهی, ارائه دهنده مقالات داخلی و ترجمه شده خارجی قارچ شناسی,سرولوژی,میکروب شناسی, ایمونولوژی,ویروس شناسی,کنترل کیفی,باکتری شناسی, هماتولوژی,انگل شناسی, بانک خون,بیوشیمی,هورمون شناسی,بافت شناسی,سیتولوژی,مایعات بدن,ژنتیک,بیوتکنولوژی,نانوتکنولوژی,تومورمارکر و آندرولوژی">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- GOOGLE   -->
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-10093814-7");
+            pageTracker._setDomainName("none");
+            pageTracker._setAllowLinker(true);
+            pageTracker._trackPageview();
+        } catch (err) { }</script>
+    <!-- GOOGLE   -->
+    <link rel="stylesheet" href="~/theme/css/bootstrap.css" type="text/css" media="screen" />
+    <!-- REVOLUTION BANNER CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="~/theme/css/fullwidth.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/settings.css" media="screen" />
+
+    <link rel="stylesheet" type="text/css" href="~/theme/css/magnific-popup.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/owl.carousel.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/owl.theme.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/jquery.bxslider.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/font-awesome.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/theme/css/responsive.css" media="screen" />
+    <link rel="stylesheet" href="../Theme/css/font-awesome-4.7.0/css/font-awesome.css" media="screen" />
+    <script type="text/javascript" src="../theme/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../theme/js/bootstrap.js"></script>
+    <script src="../theme/persianumber.min.js"></script>
+    <asp:ContentPlaceHolder runat="server" ID="plchead" />
+
+    <!-- javascript favorite -->
+    <title>سایت جامع علوم آزمایشگاهی و پزشکی فاسکو </title>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div id="container">
+
+            <div id="wrapper">
+                <uc6:TopMenu ID="TopMenu1" runat="server" />
+
+                <!-- content
+            ================================================== -->
+                <div id="content">
+
+                    <div class="blog-box with-2col">
+                        <div class="container">
+                            <div class="row">
+                                <asp:ContentPlaceHolder runat="server" ID="pagebanner" />
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 col-md-push-9 sidebar">
+
+                                    <div class="shop-widget">
+                                        <h4>گروه بندی اطلس</h4>
+
+                                        <ul class="widget-item">
+
+                                            <asp:Repeater ID="DataList_Slides" runat="server" EnableViewState="false">
+                                                <ItemTemplate>
+
+                                                    <li>
+                                                        <h6><a href='atlas.aspx?slideid=<%#DataBinder.Eval(Container.DataItem, "Id")%>&t=<%#DataBinder.Eval(Container.DataItem, "Title")%>'>
+                                                            <%#DataBinder.Eval(Container.DataItem, "Title")%>   <%#DataBinder.Eval(Container.DataItem, "Visitcount")%>
+                                                        </a>
+                                                    </li>
+                                                    </h6>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                        </ul>
+                                    </div>
+                                    <div class="shop-widget">
+                                        <h4>تبلیغات</h4>
+
+                                        <ul class="widget-item">
+                                            <li>
+                                                <object
+                                                    classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                                                    codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,260,0"
+                                                    id="phasco-standard-4"
+                                                    width="100%">
+                                                    <param name="movie" value="\phascoupfile\BrandFlash\phasco-standard-4.swf">
+                                                    <param name="bgcolor" value="#FFFFFF">
+                                                    <param name="quality" value="high">
+                                                    <param name="seamlesstabbing" value="false">
+                                                    <param name="allowscriptaccess" value="samedomain">
+                                                    <embed
+                                                        type="application/x-shockwave-flash"
+                                                        pluginspage="http://www.adobe.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"
+                                                        name="pharmed-1"
+                                                        width="232" height="182"
+                                                        src="\phascoupfile\BrandFlash\phasco-standard-4.swf"
+                                                        bgcolor="#FFFFFF"
+                                                        quality="high"
+                                                        seamlesstabbing="false"
+                                                        allowscriptaccess="samedomain">
+                                                        <noembed>
+          </noembed>
+                                                    </embed>
+                                                </object>
+                                            </li>
+                                            <li>
+                                                <object width="100%" data="\phascoupfile\BrandFlash\PhascoBanner1.swf"></object>
+                                            </li>
+                                            <li>
+                                                <object
+                                                    classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                                                    codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,260,0"
+                                                    id="phasco-standard-4" width="100%">
+                                                    <param name="movie" value="\phascoupfile\BrandFlash\phasco-standard-4.swf">
+                                                    <param name="bgcolor" value="#FFFFFF">
+                                                    <param name="quality" value="high">
+                                                    <param name="seamlesstabbing" value="false">
+                                                    <param name="allowscriptaccess" value="samedomain">
+                                                    <embed
+                                                        type="application/x-shockwave-flash"
+                                                        pluginspage="http://www.adobe.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"
+                                                        name="pharmed-1"
+                                                        width="100%"
+                                                        src="\phascoupfile\BrandFlash\phasco-standard-4.swf"
+                                                        bgcolor="#FFFFFF"
+                                                        quality="high"
+                                                        seamlesstabbing="false"
+                                                        allowscriptaccess="samedomain">
+                                                        <noembed>
+          </noembed>
+                                                    </embed>
+                                                </object>
+                                            </li>
+                                            <li>
+                                                <object width="100%" data="\phascoupfile\BrandFlash\PhascoBanner1.swf"></object>
+
+                                            </li>
+                                            <li>
+                                                <a title="دستگاه اتو آنالايزر الايزا و كمولومينسنس|ThunderBolt full automated ELISA & CLIA Proccessor System" href="http://phasco.com/Video/watch.aspx?Vid=187&t=%D8%AF%D8%B3%D8%AA%DA%AF%D8%A7%D9%87%20%D8%A7%D8%AA%D9%88%20%D8%A2%D9%86%D8%A7%D9%84%D8%A7%D9%8A%D8%B2%D8%B1%20%D8%A7%D9%84%D8%A7%D9%8A%D8%B2%D8%A7%20%D9%88%20%D9%83%D9%85%D9%88%D9%84%D9%88%D9%85%D9%8A%D9%86%D8%B3%D9%86%D8%B3|ThunderBolt%20ELISA%20&%20CLIA%20Proccessor%20System">
+                                                    <img alt="دستگاه اتو آنالايزر الايزا و كمولومينسنس|ThunderBolt full automated ELISA & CLIA Proccessor System" src="/images/ADV/ThunderBolt.jpg" />
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="bazar/">
+                                                    <img alt="بازار بزگ خدمات و ملزومات آزمایشگاهی و پزشکی" src="/images/ADV/banner-bazar.jpg" />
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="\RealTimeBook.aspx">
+                                                    <img src="/images/ADV/RealTime.jpg" />
+                                                </a>
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-md-9 col-md-pull-3 blog-side">
+                                    <asp:Panel ID="PnlMessages" runat="server" Width="100%" CssClass="alert alert-warning fade in alert-dismissable">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                                        <strong>
+                                            <asp:Image ID="imgMessageIcon" runat="server" Width="32" Height="32" />
+
+                                            <asp:Label ID="lblMessagesTitle" runat="server" Font-Bold="True"></asp:Label>
+                                        </strong>
+
+                                        <asp:Label ID="lblMessages" runat="server"></asp:Label>
+                                    </asp:Panel>
+
+                                    <div class="input-group rtl-text" id="adv-search">
+                                        <input type="text" class="form-control adv-search-text" id="txtSearch" runat="server" placeholder="جستجو" />
+                                        <div class="input-group-btn">
+                                            <div class="btn-group" role="group">
+                                                <div class="dropdown dropdown-lg search-dropdown">
+                                                    <button type="button" class="btn btn-default dropdown-toggle" id="dropdownToggle" aria-expanded="false"><span class="caret"></span></button>
+
+
+                                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                                        <div class="form-horizontal col-md-12" role="form">
+                                                            <div class="form-group">
+                                                                <label for="filter">جستجو بر اساس</label>
+                                                                <select class="form-control searchType" runat="server" id="searchType" style="width: 85%">
+                                                                    <option value="0" selected>تمامی موضوعات</option>
+                                                                    <option value="4">اخبار</option>
+                                                                    <option value="6">آزمایشگاه</option>
+                                                                    <option value="5">اطلس ها</option>
+                                                                    <option value="10">بانک سوالات</option>
+                                                                    <option value="2">بلاگ</option>
+                                                                    <option value="8">پرسش و پاسخ</option>
+                                                                    <option value="9">کار و کاریابی</option>
+                                                                    <option value="7">کاربران</option>
+                                                                    <option value="1">مقالات</option>
+                                                                    <option value="3">ویدئو ها</option>
+
+                                                                    <%--<option value="4">Most commented</option>--%>
+                                                                </select>
+                                                            </div>
+                                                            <script>
+                                                                $('#dropdownToggle').on('click', function (event) {
+                                                                    $(this).parent().toggleClass('open');
+                                                                });
+
+                                                                $('body').on('click', function (e) {
+                                                                    if (!$('search-dropdown').is(e.target)
+                                                                        && $('search-dropdown').has(e.target).length === 0
+                                                                        && $('.open').has(e.target).length === 0
+                                                                    ) {
+                                                                        $('search-dropdown').removeClass('open');
+                                                                    }
+                                                                });
+
+                                                                $("#<%Response.Write(txtSearch.ClientID);%>").keypress(function (e) {
+                                                                    //event.stopPropagation();
+                                                                    //event.preventDefault();
+                                                                    var code = e.which ? e.which : e.keyCode;
+                                                                    if (13 === code && $("#<%Response.Write(txtSearch.ClientID);%>").val()) {
+                                                                        event.preventDefault();
+                                                                        $("#<%Response.Write(btnSearch.ClientID);%>").click();
+                                                                    }
+                                                                    else return;
+
+                                                                })
+                                                            </script>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <button type="button" class="btn btn-primary" id="btnSearch" runat="server" onserverclick="btnSearch_Click" style="margin-top: 0px;"><span class="fa fa-search" aria-hidden="true"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <asp:ContentPlaceHolder ID="Plc" runat="server" />
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End content -->
+
+                <footer>
+
+                    <div class="footer-line">
+                        <div class="container text-center">
+                            <span><% Response.Write(DateTime.Now.Year); %>  © کلیه حقوق مادی و معنوی این سایت برای شرکت تحقیقاتی و تولیدی فارمد آوران سبز محفوظ است</span>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+
+        </div>
+    </form>
+
+    <%--        <div style="display: none">
+        <!-- Begin WebGozar.com Counter code -->
+<script type="text/javascript" language="javascript" src="http://www.webgozar.ir/c.aspx?Code=1212868&amp;t=counter" ></script>
+<noscript><a href="http://www.webgozar.com/counter/stats.aspx?code=1212868" target="_blank">&#1570;&#1605;&#1575;&#1585;</a></noscript>
+<!-- End WebGozar.com Counter code -->
+    </div>--%>
+</body>
+<script type="text/javascript" src="../theme/js/jquery.migrate.js"></script>
+<script type="text/javascript" src="../theme/js/jquery.magnific-popup.min.js"></script>
+
+<script type="text/javascript" src="../theme/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="../theme/js/raphael-min.js"></script>
+<script type="text/javascript" src="../theme/js/DevSolutionSkill.min.js"></script>
+<%--<script type="text/javascript" src="../theme/js/retina-1.1.0.min.js"></script>--%>
+<script type="text/javascript" src="../theme/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="../theme/js/plugins-scroll.js"></script>
+
+<!-- jQuery KenBurn Slider  -->
+<script type="text/javascript" src="../theme/js/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="../Theme/js/script.js"></script>
+</html>

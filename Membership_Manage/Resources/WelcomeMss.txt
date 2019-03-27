@@ -1,0 +1,4 @@
+﻿<p align="center"><font face="Tahoma" size="2"><b>با تشکر<br>
+<br>
+</b>&nbsp;ثبت نام شما با موفقیت انجام شد<br>
+خواهشمند است با <a href="Login.aspx">ورود به سیستم </a>اطلاعات خود را کاملتر نمائید.</p></font>

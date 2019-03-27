@@ -1,0 +1,3 @@
+<p align="center" dir="ltr"><b>Thank you</b><br>
+You have successfully registered<br>
+please <a href="Login.aspx"  title="Sign in">Sign in</a> to fill full details</p>

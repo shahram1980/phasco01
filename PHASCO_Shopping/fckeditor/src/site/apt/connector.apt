@@ -1,0 +1,87 @@
+~~ FCKeditor - The text editor for Internet - http://www.fckeditor.net
+~~ Copyright (C) 2004-2010 Frederico Caldeira Knabben
+~~
+~~ == BEGIN LICENSE ==
+~~
+~~ Licensed under the terms of any of the following licenses at your
+~~ choice:
+~~
+~~  - GNU General Public License Version 2 or later (the "GPL")
+~~    http://www.gnu.org/licenses/gpl.html
+~~
+~~  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+~~    http://www.gnu.org/licenses/lgpl.html
+~~
+~~  - Mozilla Public License Version 1.1 or later (the "MPL")
+~~    http://www.mozilla.org/MPL/MPL-1.1.html
+~~
+~~ == END LICENSE ==
+~~ @version $Id: connector.apt 4785 2009-12-21 20:10:28Z mosipov $
+				-------------------------
+					Connector Interface
+				-------------------------
+
+Connector
+
+  The integration pack offers you to provide an arbitrary file storage location
+  for files accessed/stored from the File Browser.
+
+  Read on to see how you can refit the system to your needs:
+
+* Rationale
+
+  In many situations it is not enough or not possible at all to store files within
+  the context. A connector establishes a bridge between the File Browser and a
+  storage backend, it works as a transparent VFS or proxy which allows you to serve
+  from an arbitrary location like context, local FS, DB, NFS/SMB share, FTP and
+  so on.
+
+* The interface
+
+  Consult the JavaDocs of the interface {{{java-core/apidocs/net/fckeditor/connector/Connector.html}<<<net.fckeditor.connector.Connector>>>}}
+  to see how it works.
+
+** Choosing an implementation
+
+    You have to choose an implementation, either an existing or a custom one.
+
+  Ready-to-go implementations:
+
+   * {{{java-core/apidocs/net/fckeditor/connector/impl/AbstractLocalFileSystemConnector.html}<<<net.fckeditor.connector.impl.AbstractLocalFileSystemConnector>>>}} (abstract class):
+     A standard stub implementation of a connector according to the
+     {{{http://docs.fckeditor.net/FCKeditor_2.x/Developers_Guide/Server_Side_Integration#The_Commands}Server Side Integration}}
+     It may serve as a skeleton for your implementation as it does for the default
+     ones that follow.
+
+   * {{{java-core/apidocs/net/fckeditor/connector/impl/ContextConnector.html}<<<net.fckeditor.connector.impl.ContextConnector>>>}} (default):
+     A connector serving all files from the current context.
+
+   * {{{java-core/apidocs/net/fckeditor/connector/impl/LocalConnector.html}<<<net.fckeditor.connector.impl.LocalConnector>>>}}:
+     A connector serving all files from any local path.
+
+   []
+
+  If no existing implementation suits your needs, create your own. Implement the
+  interface and resolve the locale the way you want.
+
+** Declaring an implementation
+
+   After your have chosen your desired implementation, you have to declare it.
+   Put the fully-qualified class name of the implementation in your
+   <<<fckeditor.properties>>>:
+
++------------------------------------------------------------------------------+
+  connector.impl=<desired implementation>
++------------------------------------------------------------------------------+
+
+* Configuration
+
+  A connector (at least a predefined one) interacts very closely with a <<<UserPathBuilder>>>
+  implementation, great care must be exercised while choosing an implementation
+  and userpath properties configuration. An improper configuration may result
+  in erroneous and undefined behavior. See {{{userpathbuilder.html}UserPathBuilder}}
+  for more details.
+  
+    [Keep in mind:] If you write your own Connector implementation, it could be
+                    necessary to write your own listener to resolve the files
+                    managed by the File Browser inside your webapp.

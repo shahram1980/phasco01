@@ -1,0 +1,90 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UnsecAdmin.master.cs" Inherits="phasco.Template.UnsecAdmin" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>PHASCO ADMIN (pardasys panel)</title>
+     <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+    <SCRIPT src="Java_High_Slide/highslide.js" type="text/javascript"></SCRIPT>
+    <LINK href="Java_High_Slide/HighStyle.css" type=text/css rel=stylesheet>
+    <SCRIPT type=text/javascript>
+        hs.registerOverlay({
+            overlayId: 'closebutton',
+            position: 'top right',
+            fade: 2
+        });
+
+        hs.graphicsDir = 'Java_High_Slide/graphics/';
+    </SCRIPT>
+    <script type="text/javascript" language="JavaScript1.2" src="../Cpanel/Images/stmenu.js"></script>
+<script language="javascript">
+    function popUp(N) {
+        newWindow = window.open(N, 'popUp', 'toolbar=no,menubar=no,resizable=yes,scrollbars=yes,status=no,location=no,width=300,height=150');
+    }
+    //-->
+</script>
+    <link href="../CSS/Admin.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+            border-collapse: collapse;
+            border-left: 0px solid #fff;
+            border-right-style: solid;
+            border-right-width: 0px;
+            border-top: 0px solid #fff;
+            border-bottom-style: solid;
+            border-bottom-width: 0px;
+        }
+        .style2
+        {
+            width: 473px;
+            height: 141px;
+        }
+        .style3
+        {
+            width: 100%;
+        }
+        .style6
+        {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+       <div style="text-align: center">
+           <table cellpadding="0" class="style1" dir="rtl">
+               <tr>
+                   <td align="left" height="141" style="background-image:url('/images_admin/header_Bg.gif');">
+                       <img alt="" class="style2" src="/images_admin/header.jpg" /></td>
+               </tr>
+               <tr>
+                   <td>
+                       <table class="style3">
+                           <tr>
+                               <td dir="rtl" valign="top" width="20%">
+                                   &nbsp;</td>
+                               <td align="right" dir="rtl" valign="top" width="80%" style="background:#f0f0f0;padding:5px;">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+                                </td>
+                           </tr>
+                       </table>
+                   </td>
+               </tr>
+                      <tr>
+                   <td align="left" height="50" 
+                              style="background-image:url('/images_admin/header_Bg.gif');" class="style6">
+                   Copyright © All Rights Reserved.
+                     </td>
+               </tr>
+           </table>
+       <br /><br /><br /><br /><br /><br />
+
+        </div>
+    </div>
+    </form>
+</body>
+</html>

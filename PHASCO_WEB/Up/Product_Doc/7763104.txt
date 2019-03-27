@@ -1,0 +1,61 @@
+ 
+ALTER PROCEDURE [dbo].[Transfer_MonthProfits]
+AS
+BEGIN
+Declare @InvestId int
+Declare @Accountid int
+Declare @id int
+Declare @date datetime
+Declare @Fee float
+Declare @Mode int
+Declare @IntroducerGMBID int
+Declare @Sub_Id int
+Declare @Percent_Fee Float
+declare @openingDAte datetime
+DECLARE MY_CURSOR CURSOR FAST_FORWARD  FOR 
+SELECT [InvestId],[Accountid],[id],[date],[Fee],[Mode]
+FROM  [InvestTimeTable]  where [date] <=convert(nvarchar(10),getdate(),101) and mode =0
+
+Open MY_CURSOR
+	FETCH NEXT FROM MY_CURSOR 
+	INTO @InvestId ,@Accountid ,@id ,@date ,@Fee ,@Mode 
+
+		WHILE @@FETCH_STATUS = 0
+		BEGIN
+ 
+----************************************************************
+	If not exists(SELECT [opening_Date] FROM  [investBank] where AccountNo = @InvestId and (opening_Date > '2007-10-15' and opening_Date <'2007-11-01'))
+	Begin
+				UPDATE [TAccount]  SET [Credit] = [Credit] + @Fee where AccountID = @Accountid
+--				Select @IntroducerGMBID = IntroducerGMBID From Taccount Where accountid = @Accountid
+--				Select @Sub_Id = Accountid From Taccount  where accountid = @IntroducerGMBID
+--				Set @Percent_Fee = (@Fee * 10) / 100
+
+				UPDATE [TAccount]  SET [Credit] = [Credit] + @Percent_Fee where AccountID = @Sub_Id
+
+--				INSERT INTO [TTransaction] 
+--				([OwnerAccountID], [ByAccountID],[ToAccountID] ,[TransactionDate], [Fee], [TransactionType]) 
+--				VALUES (@Sub_Id, @Accountid,@Sub_Id  ,getdate(), @Percent_Fee , 1108);
+
+				INSERT INTO [TTransaction] 
+				([OwnerAccountID], [ByAccountID],[ToAccountID] ,[TransactionDate], [Fee], [TransactionType]) 
+				VALUES (@Accountid, @InvestId,@Accountid  ,getdate(), @Fee , 1107);
+	End 
+				Update [InvestTimeTable]  set [Mode] = 1 where id = @id
+				UPDATE  [InvestToday] SET [TodayMony] = 0 ,[lastdate] =convert(nvarchar(10),getdate(),101)
+				WHERE Investid = @InvestId
+
+----************************************************************
+			FETCH NEXT FROM MY_CURSOR 
+			INTO @InvestId ,@Accountid ,@id ,@date ,@Fee ,@Mode 
+		END
+CLOSE MY_CURSOR
+DEALLOCATE MY_CURSOR
+end
+
+
+
+
+
+
+
