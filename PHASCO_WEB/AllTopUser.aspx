@@ -1,13 +1,11 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Template/Master_Phasco.Master" AutoEventWireup="true"
     CodeBehind="AllTopUser.aspx.cs" Inherits="PHASCO_WEB.AllTopUser" %>
-
+<%--for test--%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head_Meta" runat="server">
 </asp:Content>
 <asp:Content ContentPlaceHolderID="Plc_Mid" runat="server">
-
-    <script language="C#" runat="server">
-
-        public string SetProfile(int id)
+        <script language="C#" runat="server">
+                public string SetProfile(int id)
         {
             string ret_ = "";
             DataAccessLayer.Users.TBL_User_Profile da = new DataAccessLayer.Users.TBL_User_Profile();
@@ -18,8 +16,7 @@
             else ret_ = "وضعیت تحصیلی نا مشخص";
             return ret_;
         }
-
-        public string Counter(int cureentpage)
+                    public string Counter(int cureentpage)
         {
 
             int count = int.Parse(Session["User_PageinNumber"].ToString());
